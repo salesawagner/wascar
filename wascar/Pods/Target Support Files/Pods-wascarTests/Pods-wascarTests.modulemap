@@ -1,0 +1,6 @@
+framework module Pods_wascarTests {
+  umbrella header "Pods-wascarTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
