@@ -1,5 +1,5 @@
 //
-//  ListTableViewCell.swift
+//  Place.swift
 //  wascar
 //
 //  Created by Wagner Sales on 23/11/16.
@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireImage
 
 //**************************************************************************************************
 //
@@ -22,17 +20,77 @@ import AlamofireImage
 //
 //**************************************************************************************************
 
-let kListCellIdentifier = "ListCellIdentifier"
+//**************************************************************************************************
+//
+// MARK: - Class - Place
+//
+//**************************************************************************************************
 
-class ListTableViewCell: UITableViewCell {
-
+class Place: NSObject {
+	
+	var id: String { // place_id
+		return "ChIJLyNIwpJmZIgRKrlDg5TZti0"
+	}
+	
+	var name: String { // name
+		return "Import Auto Maintenance"
+	}
+	
+	var address: String { //formatted_address
+		return "1616 Broadway, Nashville, TN 37203, United States"
+	}
+	
+	var latitude: Double { // "geometry":{"location":{"lat":
+		return 36.153749
+	}
+	
+	var longitude: Double { // "geometry":{"location":{"lng":
+		return -86.79380049999999
+	}
+	
+	var imageUrl: String { //icon
+		return "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"
+	}
+	
+	var rating: CGFloat { //rating
+		return 4.2
+	}
+	
+	var openNow: Bool { //open_now
+		return true
+	}
+	
+	/*
+	"opening_hours": {
+		"periods": [
+			{
+				"close": {
+					"day": 1,
+					"time": "1800"
+				},
+				"open": {
+					"day": 1,
+					"time": "0800"
+				}
+			}
+		]
+	}
+	*/
+	var period: [String] {
+		var period = [String]()
+		period.append("Monday, 08:00-1800")
+		period.append("Monday, 08:00-1800")
+		period.append("Monday, 08:00-1800")
+		period.append("Monday, 08:00-1800")
+		period.append("Monday, 08:00-1800")
+		period.append("Monday, closed")
+		period.append("Monday, close")
+		return period
+	}
+	
 	//**************************************************
 	// MARK: - Properties
 	//**************************************************
-	
-	@IBOutlet weak var photoImageView: UIImageView!
-	@IBOutlet weak var distanceLabel: UILabel!
-	@IBOutlet weak var nameLabel: UILabel!
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -42,18 +100,6 @@ class ListTableViewCell: UITableViewCell {
 	// MARK: - Private Methods
 	//**************************************************
 	
-	private func setupPhotoImage() {
-		self.photoImageView.layer.cornerRadius	= self.photoImageView.frame.size.width/2
-		self.photoImageView.layer.masksToBounds = self.photoImageView.layer.cornerRadius > 0
-		self.photoImageView.backgroundColor		= UIColor.greenColor()
-	}
-	
-	private func resetData() {
-		self.photoImageView.image = nil
-		self.distanceLabel.text = ""
-		self.nameLabel.text = ""
-	}
-	
 	//**************************************************
 	// MARK: - Internal Methods
 	//**************************************************
@@ -62,27 +108,8 @@ class ListTableViewCell: UITableViewCell {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	func setup(cellVM: ListTableViewCellVM) {
-		Alamofire.request(.GET, cellVM.photoUrl).responseImage { response in
-			if let image = response.result.value {
-				self.photoImageView.image = image
-			}
-		}
-		self.nameLabel.text = cellVM.name
-		self.distanceLabel.text = cellVM.distance
-	}
-	
 	//**************************************************
 	// MARK: - Override Public Methods
 	//**************************************************
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-		self.resetData()
-		self.setupPhotoImage()
-    }
-	
-	override func prepareForReuse() {
-		self.resetData()
-	}
 }

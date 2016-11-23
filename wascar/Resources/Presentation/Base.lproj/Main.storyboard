@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCellIdentifier" rowHeight="130" id="BOb-Vz-mAP" customClass="ListCellTableViewCell" customModule="wascar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCellIdentifier" rowHeight="130" id="BOb-Vz-mAP" customClass="ListTableViewCell" customModule="wascar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOb-Vz-mAP" id="GMh-VG-u8d">
@@ -112,7 +112,6 @@
                                             <outlet property="distanceLabel" destination="BaV-vh-J5m" id="Khk-dc-QKA"/>
                                             <outlet property="nameLabel" destination="Mkq-W7-qyT" id="VLZ-og-ed7"/>
                                             <outlet property="photoImageView" destination="Vxq-CZ-IF0" id="gPc-yN-dVw"/>
-                                            <segue destination="xYJ-Ow-e0V" kind="show" id="ON4-Mb-BUI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -133,6 +132,7 @@
                     <navigationItem key="navigationItem" title="List Repair" id="7Du-N7-vfS"/>
                     <connections>
                         <outlet property="tableView" destination="FbS-8V-8Fd" id="VTy-Lp-0pu"/>
+                        <segue destination="xYJ-Ow-e0V" kind="show" identifier="DetailSegue" id="5I1-ly-7Um"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

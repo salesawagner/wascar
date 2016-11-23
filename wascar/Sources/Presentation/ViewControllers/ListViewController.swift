@@ -14,6 +14,8 @@ import UIKit
 //
 //**************************************************************************************************
 
+private let kDetailSegue = "DetailSegue"
+
 //**************************************************************************************************
 //
 // MARK: - Definitions -
@@ -32,6 +34,8 @@ class ListViewController: WCARTableViewController {
 	// MARK: - Properties
 	//**************************************************
 	
+	var listVM: ListViewControllerVM?
+	
 	//**************************************************
 	// MARK: - Constructors
 	//**************************************************
@@ -39,6 +43,13 @@ class ListViewController: WCARTableViewController {
 	//**************************************************
 	// MARK: - Private Methods
 	//**************************************************
+	
+	private func setupVM() {
+		self.listVM = ListViewControllerVM(completion: { (success) in
+			// TODO:
+			self.tableView.reloadData()
+		})
+	}
 	
 	//**************************************************
 	// MARK: - Internal Methods
@@ -54,11 +65,22 @@ class ListViewController: WCARTableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.setupVM()
 	}
 	
 	override func setupNavigation() {
 		super.setupNavigation()
 		self.title = "Repair List"
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == kDetailSegue {
+			if let viewController = segue.destinationViewController as? DetailViewController {
+				if let place = sender as? Place {
+					viewController.place = place
+				}
+			}
+		}
 	}
 }
 
@@ -71,20 +93,21 @@ class ListViewController: WCARTableViewController {
 extension ListViewController: UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		return self.listVM?.places.count ?? 0
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
 		var cell: UITableViewCell!
 		if let myCell = tableView.dequeueReusableCellWithIdentifier(kListCellIdentifier) as? ListTableViewCell {
+			if let places = self.listVM?.places {
+				let place = places[indexPath.row]
+				myCell.setup(ListTableViewCellVM(place: place))
+			}
 			cell = myCell
 		} else {
 			cell = UITableViewCell(style: .Default, reuseIdentifier: kListCellIdentifier)
 		}
-		
-//		cell.textLabel?.text = "blablablalalb"
-		
 		return cell
 	}
 }
@@ -98,5 +121,8 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 		return 130
+	}
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		self.performSegueWithIdentifier(kDetailSegue, sender: Place())
 	}
 }
