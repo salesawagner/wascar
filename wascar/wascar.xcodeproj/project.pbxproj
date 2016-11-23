@@ -7,180 +7,213 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A23B7332E8CCD0B32D5FCE7E /* Pods_wascarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE98CA642D413E0FBDEFE29 /* Pods_wascarTests.framework */; };
-		A72036C81DE4DB6E00D341D9 /* wascarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72036C71DE4DB6E00D341D9 /* wascarTests.swift */; };
-		A7E733451DE4E35E0088974F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E7333D1DE4E35E0088974F /* Assets.xcassets */; };
-		A7E733461DE4E35E0088974F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E7333F1DE4E35E0088974F /* LaunchScreen.storyboard */; };
-		A7E733471DE4E35E0088974F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E733411DE4E35E0088974F /* Main.storyboard */; };
-		A7E7334F1DE4E3650088974F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7334B1DE4E3650088974F /* AppDelegate.swift */; };
-		A7E733501DE4E3650088974F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7334E1DE4E3650088974F /* ViewController.swift */; };
-		BEF57374D0809E0C7ABAF37C /* Pods_wascar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313FD74919A45423354F2C9A /* Pods_wascar.framework */; };
+		3AC54325133C4303BE084631 /* Pods_wascarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B938479661803B8E1102EAAF /* Pods_wascarTests.framework */; };
+		A72C65031DE50964008636A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72C64EE1DE50964008636A9 /* Assets.xcassets */; };
+		A72C65041DE50964008636A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72C64F01DE50964008636A9 /* LaunchScreen.storyboard */; };
+		A72C65051DE50964008636A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72C64F21DE50964008636A9 /* Main.storyboard */; };
+		A72C65071DE50964008636A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64F81DE50964008636A9 /* AppDelegate.swift */; };
+		A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FA1DE50964008636A9 /* WCARTableViewController.swift */; };
+		A72C65091DE50964008636A9 /* WCARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FB1DE50964008636A9 /* WCARViewController.swift */; };
+		A72C650A1DE50964008636A9 /* UIFont+WCarFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FD1DE50964008636A9 /* UIFont+WCarFont.swift */; };
+		A72C650B1DE50964008636A9 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C65001DE50964008636A9 /* ListTableViewCell.swift */; };
+		A72C650C1DE50964008636A9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C65021DE50964008636A9 /* ListViewController.swift */; };
+		A76A365E1DE52DDB003764CE /* UIColor+WCarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A365D1DE52DDB003764CE /* UIColor+WCarColor.swift */; };
+		A7BF29E11DE5091200916EDC /* wascarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF29E01DE5091200916EDC /* wascarTests.swift */; };
+		A7F2047C1DE50C0600B10D09 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F2047B1DE50C0600B10D09 /* DetailViewController.swift */; };
+		E977FAB3A4BDE5F7964B72AF /* Pods_wascar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C56570087B3C866546BAC8 /* Pods_wascar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A72036C41DE4DB6E00D341D9 /* PBXContainerItemProxy */ = {
+		A7BF29DD1DE5091200916EDC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A72036A71DE4DB6E00D341D9 /* Project object */;
+			containerPortal = A7BF29C01DE5091200916EDC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A72036AE1DE4DB6E00D341D9;
+			remoteGlobalIDString = A7BF29C71DE5091200916EDC;
 			remoteInfo = wascar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		313FD74919A45423354F2C9A /* Pods_wascar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wascar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B0E0A6265A7A0A7F5EF8B87 /* Pods-wascar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.release.xcconfig"; sourceTree = "<group>"; };
-		87D392F35A0F37F34155D851 /* Pods-wascar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.debug.xcconfig"; sourceTree = "<group>"; };
-		A07F0C69BAB2960467CAA63B /* Pods-wascarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A72036AF1DE4DB6E00D341D9 /* wascar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wascar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A72036C31DE4DB6E00D341D9 /* wascarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wascarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A72036C71DE4DB6E00D341D9 /* wascarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wascarTests.swift; sourceTree = "<group>"; };
-		A72036C91DE4DB6E00D341D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7E7333D1DE4E35E0088974F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		A7E733401DE4E35E0088974F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A7E733421DE4E35E0088974F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A7E733441DE4E35E0088974F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Resources/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
-		A7E7334B1DE4E3650088974F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/Core/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		A7E7334E1DE4E3650088974F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Sources/Presentation/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
-		AAE98CA642D413E0FBDEFE29 /* Pods_wascarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wascarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E33533733E249BE9883E005F /* Pods-wascarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.release.xcconfig"; sourceTree = "<group>"; };
+		0BA3DA69A817F33BBF3C47AF /* Pods-wascar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.release.xcconfig"; sourceTree = "<group>"; };
+		4A8EA7C9BBD80116C1AEDA07 /* Pods-wascarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A72C64EE1DE50964008636A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A72C64F11DE50964008636A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A72C64F31DE50964008636A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A72C64F51DE50964008636A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72C64F81DE50964008636A9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A72C64FA1DE50964008636A9 /* WCARTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCARTableViewController.swift; sourceTree = "<group>"; };
+		A72C64FB1DE50964008636A9 /* WCARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCARViewController.swift; sourceTree = "<group>"; };
+		A72C64FD1DE50964008636A9 /* UIFont+WCarFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+WCarFont.swift"; sourceTree = "<group>"; };
+		A72C65001DE50964008636A9 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		A72C65021DE50964008636A9 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A76A365D1DE52DDB003764CE /* UIColor+WCarColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+WCarColor.swift"; sourceTree = "<group>"; };
+		A7BF29C81DE5091200916EDC /* wascar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wascar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7BF29DC1DE5091200916EDC /* wascarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wascarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7BF29E01DE5091200916EDC /* wascarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wascarTests.swift; sourceTree = "<group>"; };
+		A7BF29E21DE5091200916EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7F2047B1DE50C0600B10D09 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A9CB8163C58350D942119F21 /* Pods-wascarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.release.xcconfig"; sourceTree = "<group>"; };
+		B938479661803B8E1102EAAF /* Pods_wascarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wascarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C87B99BC707479D3EBC826 /* Pods-wascar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.debug.xcconfig"; sourceTree = "<group>"; };
+		E9C56570087B3C866546BAC8 /* Pods_wascar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wascar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A72036AC1DE4DB6E00D341D9 /* Frameworks */ = {
+		A7BF29C51DE5091200916EDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEF57374D0809E0C7ABAF37C /* Pods_wascar.framework in Frameworks */,
+				E977FAB3A4BDE5F7964B72AF /* Pods_wascar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A72036C01DE4DB6E00D341D9 /* Frameworks */ = {
+		A7BF29D91DE5091200916EDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A23B7332E8CCD0B32D5FCE7E /* Pods_wascarTests.framework in Frameworks */,
+				3AC54325133C4303BE084631 /* Pods_wascarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A72036A61DE4DB6E00D341D9 = {
+		A72C64ED1DE50964008636A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A72036B11DE4DB6E00D341D9 /* wascar */,
-				A72036C61DE4DB6E00D341D9 /* wascarTests */,
-				A72036B01DE4DB6E00D341D9 /* Products */,
-				FF9E1015F677583F549EE357 /* Pods */,
-				D136086633D012D35EF8DD89 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		A72036B01DE4DB6E00D341D9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A72036AF1DE4DB6E00D341D9 /* wascar.app */,
-				A72036C31DE4DB6E00D341D9 /* wascarTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A72036B11DE4DB6E00D341D9 /* wascar */ = {
-			isa = PBXGroup;
-			children = (
-				A7E7333C1DE4E35E0088974F /* Resources */,
-				A7E733491DE4E3650088974F /* Sources */,
-			);
-			path = wascar;
-			sourceTree = SOURCE_ROOT;
-		};
-		A72036C61DE4DB6E00D341D9 /* wascarTests */ = {
-			isa = PBXGroup;
-			children = (
-				A72036C71DE4DB6E00D341D9 /* wascarTests.swift */,
-				A72036C91DE4DB6E00D341D9 /* Info.plist */,
-			);
-			path = wascarTests;
-			sourceTree = "<group>";
-		};
-		A7E7333C1DE4E35E0088974F /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A7E7333D1DE4E35E0088974F /* Assets.xcassets */,
-				A7E7333E1DE4E35E0088974F /* Presentation */,
-				A7E733431DE4E35E0088974F /* Supporting Files */,
+				A72C64EE1DE50964008636A9 /* Assets.xcassets */,
+				A72C64EF1DE50964008636A9 /* Presentation */,
+				A72C64F41DE50964008636A9 /* Supporting Files */,
 			);
 			path = Resources;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
-		A7E7333E1DE4E35E0088974F /* Presentation */ = {
+		A72C64EF1DE50964008636A9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				A7E7333F1DE4E35E0088974F /* LaunchScreen.storyboard */,
-				A7E733411DE4E35E0088974F /* Main.storyboard */,
+				A72C64F01DE50964008636A9 /* LaunchScreen.storyboard */,
+				A72C64F21DE50964008636A9 /* Main.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		A7E733431DE4E35E0088974F /* Supporting Files */ = {
+		A72C64F41DE50964008636A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A7E733441DE4E35E0088974F /* Info.plist */,
+				A72C64F51DE50964008636A9 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A7E733491DE4E3650088974F /* Sources */ = {
+		A72C64F61DE50964008636A9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A7E7334A1DE4E3650088974F /* Core */,
-				A7E7334C1DE4E3650088974F /* Presentation */,
+				A72C64F71DE50964008636A9 /* Core */,
+				A72C64FE1DE50964008636A9 /* Presentation */,
 			);
-			name = Sources;
-			path = ../Sources;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		A7E7334A1DE4E3650088974F /* Core */ = {
+		A72C64F71DE50964008636A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A7E7334B1DE4E3650088974F /* AppDelegate.swift */,
+				A72C64F81DE50964008636A9 /* AppDelegate.swift */,
+				A72C64F91DE50964008636A9 /* Base */,
+				A72C64FC1DE50964008636A9 /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		A7E7334C1DE4E3650088974F /* Presentation */ = {
+		A72C64F91DE50964008636A9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A7E7334D1DE4E3650088974F /* ViewControllers */,
+				A72C64FA1DE50964008636A9 /* WCARTableViewController.swift */,
+				A72C64FB1DE50964008636A9 /* WCARViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A72C64FC1DE50964008636A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A76A365D1DE52DDB003764CE /* UIColor+WCarColor.swift */,
+				A72C64FD1DE50964008636A9 /* UIFont+WCarFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A72C64FE1DE50964008636A9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A72C64FF1DE50964008636A9 /* Cells */,
+				A72C65011DE50964008636A9 /* ViewControllers */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		A7E7334D1DE4E3650088974F /* ViewControllers */ = {
+		A72C64FF1DE50964008636A9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A7E7334E1DE4E3650088974F /* ViewController.swift */,
+				A72C65001DE50964008636A9 /* ListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A72C65011DE50964008636A9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A72C65021DE50964008636A9 /* ListViewController.swift */,
+				A7F2047B1DE50C0600B10D09 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		D136086633D012D35EF8DD89 /* Frameworks */ = {
+		A7BF29BF1DE5091200916EDC = {
 			isa = PBXGroup;
 			children = (
-				313FD74919A45423354F2C9A /* Pods_wascar.framework */,
-				AAE98CA642D413E0FBDEFE29 /* Pods_wascarTests.framework */,
+				A72C64ED1DE50964008636A9 /* Resources */,
+				A72C64F61DE50964008636A9 /* Sources */,
+				A7BF29DF1DE5091200916EDC /* wascarTests */,
+				A7BF29C91DE5091200916EDC /* Products */,
+				F7237209489E29679B5A127D /* Pods */,
+				CB3C7B2E058B842C7A498EEB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A7BF29C91DE5091200916EDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7BF29C81DE5091200916EDC /* wascar.app */,
+				A7BF29DC1DE5091200916EDC /* wascarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7BF29DF1DE5091200916EDC /* wascarTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7BF29E01DE5091200916EDC /* wascarTests.swift */,
+				A7BF29E21DE5091200916EDC /* Info.plist */,
+			);
+			path = wascarTests;
+			sourceTree = "<group>";
+		};
+		CB3C7B2E058B842C7A498EEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9C56570087B3C866546BAC8 /* Pods_wascar.framework */,
+				B938479661803B8E1102EAAF /* Pods_wascarTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF9E1015F677583F549EE357 /* Pods */ = {
+		F7237209489E29679B5A127D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				87D392F35A0F37F34155D851 /* Pods-wascar.debug.xcconfig */,
-				4B0E0A6265A7A0A7F5EF8B87 /* Pods-wascar.release.xcconfig */,
-				A07F0C69BAB2960467CAA63B /* Pods-wascarTests.debug.xcconfig */,
-				E33533733E249BE9883E005F /* Pods-wascarTests.release.xcconfig */,
+				D7C87B99BC707479D3EBC826 /* Pods-wascar.debug.xcconfig */,
+				0BA3DA69A817F33BBF3C47AF /* Pods-wascar.release.xcconfig */,
+				4A8EA7C9BBD80116C1AEDA07 /* Pods-wascarTests.debug.xcconfig */,
+				A9CB8163C58350D942119F21 /* Pods-wascarTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -188,16 +221,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A72036AE1DE4DB6E00D341D9 /* wascar */ = {
+		A7BF29C71DE5091200916EDC /* wascar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A72036CC1DE4DB6E00D341D9 /* Build configuration list for PBXNativeTarget "wascar" */;
+			buildConfigurationList = A7BF29E51DE5091200916EDC /* Build configuration list for PBXNativeTarget "wascar" */;
 			buildPhases = (
-				C762712198293DC9E3BE8C53 /* [CP] Check Pods Manifest.lock */,
-				A72036AB1DE4DB6E00D341D9 /* Sources */,
-				A72036AC1DE4DB6E00D341D9 /* Frameworks */,
-				A72036AD1DE4DB6E00D341D9 /* Resources */,
-				DA49F776F754AFB6341726D4 /* [CP] Embed Pods Frameworks */,
-				4CB0D52571ADE6538E68A7ED /* [CP] Copy Pods Resources */,
+				D39AEC1B28C4180C415F8A5E /* [CP] Check Pods Manifest.lock */,
+				A7BF29C41DE5091200916EDC /* Sources */,
+				A7BF29C51DE5091200916EDC /* Frameworks */,
+				A7BF29C61DE5091200916EDC /* Resources */,
+				010A46E124D36933B2DCA196 /* [CP] Embed Pods Frameworks */,
+				05C297D42487E400326E04C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,50 +238,50 @@
 			);
 			name = wascar;
 			productName = wascar;
-			productReference = A72036AF1DE4DB6E00D341D9 /* wascar.app */;
+			productReference = A7BF29C81DE5091200916EDC /* wascar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A72036C21DE4DB6E00D341D9 /* wascarTests */ = {
+		A7BF29DB1DE5091200916EDC /* wascarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A72036CF1DE4DB6E00D341D9 /* Build configuration list for PBXNativeTarget "wascarTests" */;
+			buildConfigurationList = A7BF29E81DE5091200916EDC /* Build configuration list for PBXNativeTarget "wascarTests" */;
 			buildPhases = (
-				4B24CAD62578F6F54633964C /* [CP] Check Pods Manifest.lock */,
-				A72036BF1DE4DB6E00D341D9 /* Sources */,
-				A72036C01DE4DB6E00D341D9 /* Frameworks */,
-				A72036C11DE4DB6E00D341D9 /* Resources */,
-				2108F0A1FB7ECDFFB1952607 /* [CP] Embed Pods Frameworks */,
-				B563DCC4877BBDCE71463FBB /* [CP] Copy Pods Resources */,
+				1895CF45DFD02BB311015D12 /* [CP] Check Pods Manifest.lock */,
+				A7BF29D81DE5091200916EDC /* Sources */,
+				A7BF29D91DE5091200916EDC /* Frameworks */,
+				A7BF29DA1DE5091200916EDC /* Resources */,
+				84F717ADD7C0B3AD37CF3086 /* [CP] Embed Pods Frameworks */,
+				706255990C3B6C8320C51ACC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A72036C51DE4DB6E00D341D9 /* PBXTargetDependency */,
+				A7BF29DE1DE5091200916EDC /* PBXTargetDependency */,
 			);
 			name = wascarTests;
 			productName = wascarTests;
-			productReference = A72036C31DE4DB6E00D341D9 /* wascarTests.xctest */;
+			productReference = A7BF29DC1DE5091200916EDC /* wascarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A72036A71DE4DB6E00D341D9 /* Project object */ = {
+		A7BF29C01DE5091200916EDC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Wagner Sales";
 				TargetAttributes = {
-					A72036AE1DE4DB6E00D341D9 = {
+					A7BF29C71DE5091200916EDC = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					A72036C21DE4DB6E00D341D9 = {
+					A7BF29DB1DE5091200916EDC = {
 						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = A72036AE1DE4DB6E00D341D9;
+						TestTargetID = A7BF29C71DE5091200916EDC;
 					};
 				};
 			};
-			buildConfigurationList = A72036AA1DE4DB6E00D341D9 /* Build configuration list for PBXProject "wascar" */;
+			buildConfigurationList = A7BF29C31DE5091200916EDC /* Build configuration list for PBXProject "wascar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -256,29 +289,29 @@
 				en,
 				Base,
 			);
-			mainGroup = A72036A61DE4DB6E00D341D9;
-			productRefGroup = A72036B01DE4DB6E00D341D9 /* Products */;
+			mainGroup = A7BF29BF1DE5091200916EDC;
+			productRefGroup = A7BF29C91DE5091200916EDC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A72036AE1DE4DB6E00D341D9 /* wascar */,
-				A72036C21DE4DB6E00D341D9 /* wascarTests */,
+				A7BF29C71DE5091200916EDC /* wascar */,
+				A7BF29DB1DE5091200916EDC /* wascarTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A72036AD1DE4DB6E00D341D9 /* Resources */ = {
+		A7BF29C61DE5091200916EDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7E733471DE4E35E0088974F /* Main.storyboard in Resources */,
-				A7E733451DE4E35E0088974F /* Assets.xcassets in Resources */,
-				A7E733461DE4E35E0088974F /* LaunchScreen.storyboard in Resources */,
+				A72C65051DE50964008636A9 /* Main.storyboard in Resources */,
+				A72C65031DE50964008636A9 /* Assets.xcassets in Resources */,
+				A72C65041DE50964008636A9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A72036C11DE4DB6E00D341D9 /* Resources */ = {
+		A7BF29DA1DE5091200916EDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,82 +321,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2108F0A1FB7ECDFFB1952607 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4B24CAD62578F6F54633964C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4CB0D52571ADE6538E68A7ED /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wascar/Pods-wascar-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B563DCC4877BBDCE71463FBB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C762712198293DC9E3BE8C53 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DA49F776F754AFB6341726D4 /* [CP] Embed Pods Frameworks */ = {
+		010A46E124D36933B2DCA196 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -378,59 +336,138 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wascar/Pods-wascar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		05C297D42487E400326E04C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wascar/Pods-wascar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1895CF45DFD02BB311015D12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		706255990C3B6C8320C51ACC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84F717ADD7C0B3AD37CF3086 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D39AEC1B28C4180C415F8A5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A72036AB1DE4DB6E00D341D9 /* Sources */ = {
+		A7BF29C41DE5091200916EDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7E733501DE4E3650088974F /* ViewController.swift in Sources */,
-				A7E7334F1DE4E3650088974F /* AppDelegate.swift in Sources */,
+				A72C650A1DE50964008636A9 /* UIFont+WCarFont.swift in Sources */,
+				A72C65091DE50964008636A9 /* WCARViewController.swift in Sources */,
+				A72C650C1DE50964008636A9 /* ListViewController.swift in Sources */,
+				A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */,
+				A72C650B1DE50964008636A9 /* ListTableViewCell.swift in Sources */,
+				A72C65071DE50964008636A9 /* AppDelegate.swift in Sources */,
+				A76A365E1DE52DDB003764CE /* UIColor+WCarColor.swift in Sources */,
+				A7F2047C1DE50C0600B10D09 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A72036BF1DE4DB6E00D341D9 /* Sources */ = {
+		A7BF29D81DE5091200916EDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A72036C81DE4DB6E00D341D9 /* wascarTests.swift in Sources */,
+				A7BF29E11DE5091200916EDC /* wascarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A72036C51DE4DB6E00D341D9 /* PBXTargetDependency */ = {
+		A7BF29DE1DE5091200916EDC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A72036AE1DE4DB6E00D341D9 /* wascar */;
-			targetProxy = A72036C41DE4DB6E00D341D9 /* PBXContainerItemProxy */;
+			target = A7BF29C71DE5091200916EDC /* wascar */;
+			targetProxy = A7BF29DD1DE5091200916EDC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A7E7333F1DE4E35E0088974F /* LaunchScreen.storyboard */ = {
+		A72C64F01DE50964008636A9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A7E733401DE4E35E0088974F /* Base */,
+				A72C64F11DE50964008636A9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = Resources/Presentation;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
-		A7E733411DE4E35E0088974F /* Main.storyboard */ = {
+		A72C64F21DE50964008636A9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A7E733421DE4E35E0088974F /* Base */,
+				A72C64F31DE50964008636A9 /* Base */,
 			);
 			name = Main.storyboard;
-			path = Resources/Presentation;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A72036CA1DE4DB6E00D341D9 /* Debug */ = {
+		A7BF29E31DE5091200916EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -475,7 +512,7 @@
 			};
 			name = Debug;
 		};
-		A72036CB1DE4DB6E00D341D9 /* Release */ = {
+		A7BF29E41DE5091200916EDC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -513,35 +550,33 @@
 			};
 			name = Release;
 		};
-		A72036CD1DE4DB6E00D341D9 /* Debug */ = {
+		A7BF29E61DE5091200916EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87D392F35A0F37F34155D851 /* Pods-wascar.debug.xcconfig */;
+			baseConfigurationReference = D7C87B99BC707479D3EBC826 /* Pods-wascar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.wagnersales.wascar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		A72036CE1DE4DB6E00D341D9 /* Release */ = {
+		A7BF29E71DE5091200916EDC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B0E0A6265A7A0A7F5EF8B87 /* Pods-wascar.release.xcconfig */;
+			baseConfigurationReference = 0BA3DA69A817F33BBF3C47AF /* Pods-wascar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.wagnersales.wascar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		A72036D01DE4DB6E00D341D9 /* Debug */ = {
+		A7BF29E91DE5091200916EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A07F0C69BAB2960467CAA63B /* Pods-wascarTests.debug.xcconfig */;
+			baseConfigurationReference = 4A8EA7C9BBD80116C1AEDA07 /* Pods-wascarTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wascarTests/Info.plist;
@@ -552,9 +587,9 @@
 			};
 			name = Debug;
 		};
-		A72036D11DE4DB6E00D341D9 /* Release */ = {
+		A7BF29EA1DE5091200916EDC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E33533733E249BE9883E005F /* Pods-wascarTests.release.xcconfig */;
+			baseConfigurationReference = A9CB8163C58350D942119F21 /* Pods-wascarTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wascarTests/Info.plist;
@@ -568,34 +603,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A72036AA1DE4DB6E00D341D9 /* Build configuration list for PBXProject "wascar" */ = {
+		A7BF29C31DE5091200916EDC /* Build configuration list for PBXProject "wascar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A72036CA1DE4DB6E00D341D9 /* Debug */,
-				A72036CB1DE4DB6E00D341D9 /* Release */,
+				A7BF29E31DE5091200916EDC /* Debug */,
+				A7BF29E41DE5091200916EDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A72036CC1DE4DB6E00D341D9 /* Build configuration list for PBXNativeTarget "wascar" */ = {
+		A7BF29E51DE5091200916EDC /* Build configuration list for PBXNativeTarget "wascar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A72036CD1DE4DB6E00D341D9 /* Debug */,
-				A72036CE1DE4DB6E00D341D9 /* Release */,
+				A7BF29E61DE5091200916EDC /* Debug */,
+				A7BF29E71DE5091200916EDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A72036CF1DE4DB6E00D341D9 /* Build configuration list for PBXNativeTarget "wascarTests" */ = {
+		A7BF29E81DE5091200916EDC /* Build configuration list for PBXNativeTarget "wascarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A72036D01DE4DB6E00D341D9 /* Debug */,
-				A72036D11DE4DB6E00D341D9 /* Release */,
+				A7BF29E91DE5091200916EDC /* Debug */,
+				A7BF29EA1DE5091200916EDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A72036A71DE4DB6E00D341D9 /* Project object */;
+	rootObject = A7BF29C01DE5091200916EDC /* Project object */;
 }

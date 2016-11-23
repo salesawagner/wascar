@@ -5,6 +5,7 @@ target 'wascar' do
 
 	# Server
 	pod 'Alamofire',		'~> 3.5'
+	pod 'AlamofireImage'
 	pod 'SwiftyJSON',		'~> 2.4'
 	
   target 'wascarTests' do
