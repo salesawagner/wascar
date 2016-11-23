@@ -70,7 +70,7 @@ class ListViewController: WCARTableViewController {
 	
 	override func setupNavigation() {
 		super.setupNavigation()
-		self.title = "Repair List"
+		self.title = L.repairList
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

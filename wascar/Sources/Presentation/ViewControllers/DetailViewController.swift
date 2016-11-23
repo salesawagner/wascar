@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: WCARTableViewController {
+class DetailViewController: WCARViewController {
 
 	//**************************************************
 	// MARK: - Properties
@@ -42,7 +42,12 @@ class DetailViewController: WCARTableViewController {
 	
 	override func setupNavigation() {
 		super.setupNavigation()
-		self.title = "Detail"
+		self.title = L.details
+	}
+	
+	override func setupUI() {
+		super.setupUI()
+		self.view.backgroundColor = UIColor.whiteColor()
 	}
 
 }
