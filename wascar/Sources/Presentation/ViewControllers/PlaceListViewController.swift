@@ -57,7 +57,7 @@ class PlaceListViewController: WCARTableViewController {
 		}
 		self.viewModel.loadPlaces { (success) in
 			self.tableView.reloadData()
-			self.stopLoading(error: success)
+			self.stopLoading(error: !success)
 			if let completion = completion {
 				completion(success: success)
 			}
@@ -69,7 +69,7 @@ class PlaceListViewController: WCARTableViewController {
 	//**************************************************
 	
 	internal func didRefresh(refreshControl: UIRefreshControl) {
-		self.loadPlaces { (success) in
+		self.loadPlaces(false) { (success) in
 			self.refreshControl.endRefreshing()
 		}
 	}
