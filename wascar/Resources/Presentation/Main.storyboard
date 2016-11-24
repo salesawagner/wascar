@@ -24,7 +24,7 @@
         <!--List Repair-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ListViewController" customModule="wascar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="PlaceListViewController" customModule="wascar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCellIdentifier" rowHeight="130" id="BOb-Vz-mAP" customClass="ListTableViewCell" customModule="wascar" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlaceCellIdentifier" rowHeight="130" id="BOb-Vz-mAP" customClass="PlaceCell" customModule="wascar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOb-Vz-mAP" id="GMh-VG-u8d">
@@ -73,8 +73,9 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-CZ-IF0">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_header" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-CZ-IF0">
                                                             <rect key="frame" x="510" y="15" width="30" height="30"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="4qx-y8-jk6"/>
                                                                 <constraint firstAttribute="height" constant="30" id="fUo-ek-Woj"/>
@@ -139,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="450" y="144"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Place Detail View Controller-->
         <scene sceneID="S8g-UC-GG6">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xYJ-Ow-e0V" customClass="DetailViewController" customModule="wascar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xYJ-Ow-e0V" customClass="PlaceDetailViewController" customModule="wascar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jRP-oT-sfE"/>
                         <viewControllerLayoutGuide type="bottom" id="mUY-Ls-B79"/>
@@ -154,20 +155,22 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iw-gC-ZTe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkS-6A-yxx" userLabel="Header">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkS-6A-yxx" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_header" translatesAutoresizingMaskIntoConstraints="NO" id="XRk-Np-VbR">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-1 Auto Maintenance &amp; Repair" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs5-Nt-Djv">
-                                                <rect key="frame" x="25" y="20" width="454" height="44"/>
+                                                <rect key="frame" x="25" y="20" width="455.5" height="46"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="32"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="2" height="2"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Hs5-Nt-Djv" firstAttribute="leading" secondItem="MkS-6A-yxx" secondAttribute="leading" constant="25" id="HAW-sx-sgb"/>
                                             <constraint firstItem="XRk-Np-VbR" firstAttribute="leading" secondItem="MkS-6A-yxx" secondAttribute="leading" id="PLN-P9-FsR"/>
@@ -191,17 +194,17 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pby-t4-1oS" userLabel="Adress">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pby-t4-1oS" userLabel="Address">
                                         <rect key="frame" x="0.0" y="178" width="600" height="19.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fq-Yz-fQy">
-                                                <rect key="frame" x="25" y="0.0" width="42.5" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fq-Yz-fQy">
+                                                <rect key="frame" x="25" y="0.0" width="51" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.5871879107067306" green="0.59164425442486668" blue="0.6050132855792747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1616 Broadway, Nashville, TN 37203, United States" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-gl-sMm">
-                                                <rect key="frame" x="118" y="0.0" width="457" height="19.5"/>
+                                                <rect key="frame" x="126" y="0.0" width="448.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -233,24 +236,12 @@
                                                 <color key="textColor" red="0.58718791069999998" green="0.59164425440000001" blue="0.60501328560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itr-Y7-fol" userLabel="Open noew">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itr-Y7-fol" userLabel="Open now" customClass="OpenNow" customModule="wascar" customModuleProvider="target">
                                                 <rect key="frame" x="500" y="0.0" width="75" height="20"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwG-AU-FU9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="19.5"/>
-                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
-                                                        <color key="textColor" red="0.87450980389999999" green="0.87843137250000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
                                                 <color key="backgroundColor" red="0.40784313725490196" green="0.6470588235294118" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="75" id="7DH-XK-yzT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="vwG-AU-FU9" secondAttribute="trailing" id="G6D-wh-nbR"/>
-                                                    <constraint firstItem="vwG-AU-FU9" firstAttribute="leading" secondItem="Itr-Y7-fol" secondAttribute="leading" id="Sx9-e9-h0b"/>
-                                                    <constraint firstAttribute="bottom" secondItem="vwG-AU-FU9" secondAttribute="bottom" id="bOG-iy-GJx"/>
                                                     <constraint firstAttribute="height" constant="20" id="cAP-Jw-VY8"/>
-                                                    <constraint firstItem="vwG-AU-FU9" firstAttribute="top" secondItem="Itr-Y7-fol" secondAttribute="top" id="fza-DS-VOK"/>
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-bM-2vD">
@@ -292,7 +283,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz0-yn-4f8">
-                                                <rect key="frame" x="555.5" y="0.0" width="19.5" height="19.5"/>
+                                                <rect key="frame" x="555" y="0.0" width="19.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -308,7 +299,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfI-0d-gnL" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="478.5" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="478" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.87427276369999996" green="0.87828165290000004" blue="0.8906148076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="V6h-G4-Zrk"/>
@@ -353,6 +344,15 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="9fq-Yz-fQy" id="wUg-cE-uQ2"/>
+                        <outlet property="addressValueLabel" destination="ZH2-gl-sMm" id="mKl-2l-reP"/>
+                        <outlet property="openLabel" destination="APF-YY-hAD" id="XoT-Ix-n0R"/>
+                        <outlet property="openNowView" destination="Itr-Y7-fol" id="CSl-e6-k8G"/>
+                        <outlet property="photoImageView" destination="XRk-Np-VbR" id="eSg-60-9NK"/>
+                        <outlet property="ratingLabel" destination="e7R-Y9-GKS" id="fsK-w4-8LU"/>
+                        <outlet property="ratingValueLabel" destination="fz0-yn-4f8" id="mMH-DB-y1a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8G-zT-Ysj" sceneMemberID="firstResponder"/>
             </objects>
