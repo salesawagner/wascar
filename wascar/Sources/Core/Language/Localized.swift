@@ -14,7 +14,30 @@ struct L {
 	static var repairList: String {
 		return "REPAIR_LIST".localized
 	}
+	
 	static var details: String {
 		return "DETAILS".localized
+	}
+	
+	//DETAILS VIEW
+	static var address: String {
+		return "ADDRESS".localized
+	}
+	
+	static var open: String {
+		return "OPEN".localized
+	}
+	
+	static var rating: String {
+		return "RATING".localized
+	}
+	
+	//OPEN NOW VIEW
+	static var openNow: String {
+		return "OPEN_NOW".localized
+	}
+	
+	static var closed: String {
+		return "CLOSED".localized
 	}
 }
