@@ -43,6 +43,7 @@ class PlaceDetailViewController: WCARViewController {
 	
 	// Open now
 	@IBOutlet weak var openLabel: UILabel!
+	@IBOutlet weak var openValueLabel: UILabel!
 	@IBOutlet weak var openNowView: OpenNow!
 	
 	// Rating
@@ -72,6 +73,9 @@ class PlaceDetailViewController: WCARViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.setupUI()
+		self.viewModel.loadPlaceById { (success) in
+			self.setupUI()
+		}
     }
 	
 	override func setupNavigation() {
@@ -89,6 +93,7 @@ class PlaceDetailViewController: WCARViewController {
 		// Values
 		self.addressValueLabel.text = self.viewModel.address
 		self.ratingValueLabel.text = self.viewModel.rating
+		self.openValueLabel.text = self.viewModel.openingHours
 		if self.viewModel.openNow {
 			self.openNowView.setStatus(.Open)
 		} else {

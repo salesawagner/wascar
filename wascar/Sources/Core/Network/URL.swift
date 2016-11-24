@@ -34,16 +34,12 @@ class URL {
 		return "AIzaSyBQdUB4ud-KqBpEVuq7gfLuc9c_f0q1RKY"
 	}
 	
-	static var googleBaseUrl: String {
+	static var placeApiUrl: String {
 		return "https://maps.googleapis.com/maps/api/place"
 	}
 	
-	static var placeBaseUrl: String {
-		return "\(self.googleBaseUrl)/textsearch/json"
-	}
-	
 	static var photoBaseUrl: String {
-		return "\(self.googleBaseUrl)/photo"
+		return "\(self.placeApiUrl)/photo"
 	}
 	
 	//**************************************************
@@ -62,8 +58,16 @@ class URL {
 	// MARK: - Public Methods
 	//**************************************************
 	
+	class func baseUrl(type: String) -> String {
+		return "\(self.placeApiUrl)/\(type)/json"
+	}
+	
 	class func places(type: String) -> String {
-		return "\(self.placeBaseUrl)?types=\(type)&key=\(self.apiKey)"
+		return "\(self.baseUrl("textsearch"))?types=\(type)&key=\(self.apiKey)"
+	}
+	
+	class func placeById(id: String) -> String {
+		return "\(self.baseUrl("details"))?placeid=\(id)&key=\(self.apiKey)"
 	}
 	
 	class func photo(reference: String, maxWidth: Int = 400) -> String {

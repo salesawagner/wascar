@@ -228,7 +228,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2j8-Bg-EEU" userLabel="Open">
-                                        <rect key="frame" x="0.0" y="238" width="600" height="170"/>
+                                        <rect key="frame" x="0.0" y="238" width="600" height="49"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APF-YY-hAD">
                                                 <rect key="frame" x="25" y="0.0" width="36" height="19.5"/>
@@ -244,37 +244,34 @@
                                                     <constraint firstAttribute="height" constant="20" id="cAP-Jw-VY8"/>
                                                 </constraints>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-bM-2vD">
-                                                <rect key="frame" x="21" y="19" width="554" height="150.5"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <string key="text">Monday 9:00am - 18:00pm Monday 9:00am - 18:00pm Monday 9:00am - 18:00pm Monday 9:00am - 18:00pm Monday 9:00am - 18:00pm Monday 9:00am - 18:00pm Monday 9:00am - 18:00pm</string>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIA-KP-44H">
+                                                <rect key="frame" x="25" y="29" width="550" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="nbR-bM-2vD" firstAttribute="top" secondItem="APF-YY-hAD" secondAttribute="bottom" id="1pw-WA-VWy"/>
-                                            <constraint firstItem="nbR-bM-2vD" firstAttribute="leading" secondItem="2j8-Bg-EEU" secondAttribute="leading" constant="21" id="9OI-hY-JNs"/>
                                             <constraint firstItem="APF-YY-hAD" firstAttribute="leading" secondItem="2j8-Bg-EEU" secondAttribute="leading" constant="25" id="DbM-Hh-dzS"/>
                                             <constraint firstItem="Itr-Y7-fol" firstAttribute="top" secondItem="2j8-Bg-EEU" secondAttribute="top" id="Hwd-YM-LpF"/>
                                             <constraint firstAttribute="trailing" secondItem="Itr-Y7-fol" secondAttribute="trailing" constant="25" id="IRx-88-F55"/>
                                             <constraint firstItem="APF-YY-hAD" firstAttribute="top" secondItem="2j8-Bg-EEU" secondAttribute="top" id="Jsz-AM-bEQ"/>
-                                            <constraint firstAttribute="height" constant="170" id="Mxl-U3-Npa"/>
-                                            <constraint firstAttribute="bottom" secondItem="nbR-bM-2vD" secondAttribute="bottom" id="WQP-eX-VwV"/>
-                                            <constraint firstAttribute="trailing" secondItem="nbR-bM-2vD" secondAttribute="trailing" constant="25" id="m6h-Zp-Wx3"/>
+                                            <constraint firstAttribute="bottom" secondItem="rIA-KP-44H" secondAttribute="bottom" id="MM5-JS-Kho"/>
+                                            <constraint firstItem="rIA-KP-44H" firstAttribute="top" secondItem="APF-YY-hAD" secondAttribute="bottom" constant="10" id="Mm8-5T-da5"/>
+                                            <constraint firstItem="rIA-KP-44H" firstAttribute="leading" secondItem="APF-YY-hAD" secondAttribute="leading" id="Tt5-uN-X02"/>
+                                            <constraint firstItem="rIA-KP-44H" firstAttribute="trailing" secondItem="Itr-Y7-fol" secondAttribute="trailing" id="lor-3L-9BM"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-zW-Jab" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="418" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="307" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.87427276369999996" green="0.87828165290000004" blue="0.8906148076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="rAl-cV-jBQ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0y8-bF-Ehg" userLabel="Rating">
-                                        <rect key="frame" x="0.0" y="439" width="600" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="328" width="600" height="19.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7R-Y9-GKS">
                                                 <rect key="frame" x="25" y="0.0" width="40" height="19.5"/>
@@ -299,7 +296,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfI-0d-gnL" userLabel="Separator">
-                                        <rect key="frame" x="0.0" y="478" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="367.5" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.87427276369999996" green="0.87828165290000004" blue="0.8906148076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="V6h-G4-Zrk"/>
@@ -312,7 +309,7 @@
                                     <constraint firstItem="qfI-0d-gnL" firstAttribute="top" secondItem="0y8-bF-Ehg" secondAttribute="bottom" constant="20" id="DiV-im-At6"/>
                                     <constraint firstItem="Pby-t4-1oS" firstAttribute="top" secondItem="MkS-6A-yxx" secondAttribute="bottom" constant="50" id="Ehj-pX-zuN"/>
                                     <constraint firstItem="Pby-t4-1oS" firstAttribute="width" secondItem="MkS-6A-yxx" secondAttribute="width" id="H6l-5v-YIU"/>
-                                    <constraint firstItem="fRk-zW-Jab" firstAttribute="top" secondItem="2j8-Bg-EEU" secondAttribute="bottom" constant="10" id="NLN-tS-hh4"/>
+                                    <constraint firstItem="fRk-zW-Jab" firstAttribute="top" secondItem="2j8-Bg-EEU" secondAttribute="bottom" constant="20" id="NLN-tS-hh4"/>
                                     <constraint firstItem="pa4-w9-M7K" firstAttribute="bottom" secondItem="MkS-6A-yxx" secondAttribute="bottom" constant="31" id="QWj-dl-rxT"/>
                                     <constraint firstItem="LfN-4X-fSi" firstAttribute="width" secondItem="Pby-t4-1oS" secondAttribute="width" id="RLi-yq-5AU"/>
                                     <constraint firstItem="LfN-4X-fSi" firstAttribute="centerX" secondItem="Pby-t4-1oS" secondAttribute="centerX" id="Tkl-ds-ntr"/>
@@ -349,6 +346,7 @@
                         <outlet property="addressValueLabel" destination="ZH2-gl-sMm" id="mKl-2l-reP"/>
                         <outlet property="openLabel" destination="APF-YY-hAD" id="XoT-Ix-n0R"/>
                         <outlet property="openNowView" destination="Itr-Y7-fol" id="CSl-e6-k8G"/>
+                        <outlet property="openValueLabel" destination="rIA-KP-44H" id="G2F-eZ-ic9"/>
                         <outlet property="photoImageView" destination="XRk-Np-VbR" id="eSg-60-9NK"/>
                         <outlet property="ratingLabel" destination="e7R-Y9-GKS" id="fsK-w4-8LU"/>
                         <outlet property="ratingValueLabel" destination="fz0-yn-4f8" id="mMH-DB-y1a"/>

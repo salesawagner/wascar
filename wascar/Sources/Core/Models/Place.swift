@@ -67,7 +67,7 @@ class Place: NSObject {
 	
 	init(json: JSON) {
 		// Info
-		self.id = json["id"].stringValue
+		self.id = json["place_id"].stringValue
 		self.name = json["name"].stringValue
 		self.address = json["formatted_address"].stringValue
 		self.rating = json["rating"].floatValue
