@@ -34,14 +34,15 @@ class Photo: NSObject {
 	//**************************************************
 	
 	var url: String
+	var reference: String
 	
 	//**************************************************
 	// MARK: - Constructors
 	//**************************************************
 	
 	init(json: JSON) {
-		let reference = json["photo_reference"].stringValue
 		let width = json["width"].intValue
+		self.reference = json["photo_reference"].stringValue
 		self.url = URL.photo(reference, maxWidth: min(width, 400))
 	}
 	

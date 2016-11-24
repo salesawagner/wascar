@@ -75,9 +75,6 @@ class Place: NSObject {
 
 		// Address
 		self.address = json["formatted_address"].stringValue
-		if self.address.isEmpty {
-			self.address = json["vicinity"].stringValue
-		}
 
 		// Location
 		let geometry = json["geometry"]

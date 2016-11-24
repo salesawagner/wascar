@@ -36,7 +36,7 @@ class PlaceDetailViewModel: NSObject {
 	var placeId: String
 	var name: String
 	var address: String
-	var openingHours: String
+	var openingHours: String?
 	var openNow: Bool
 	var rating: String
 	var photoUrl: String
@@ -52,19 +52,17 @@ class PlaceDetailViewModel: NSObject {
 		self.openNow	= place.openNow
 		self.rating		= String(format: "%.1f", place.rating)
 		self.photoUrl	= place.photoUrl
-		
-		var openingHours = ""
-		for hour in place.period {
-			openingHours += hour
-		}
-		self.openingHours = openingHours
 	}
 	
 	//**************************************************
 	// MARK: - Private Methods
 	//**************************************************
 	
-	private func updatePlace(place: Place) {
+	//**************************************************
+	// MARK: - Internal Methods
+	//**************************************************
+	
+	internal func updatePlace(place: Place) {
 		var openingHours = ""
 		for hour in place.period {
 			openingHours += openingHours.isEmpty ? "" : "\n"
@@ -73,10 +71,6 @@ class PlaceDetailViewModel: NSObject {
 		self.openingHours	= openingHours
 		self.address		= place.address
 	}
-	
-	//**************************************************
-	// MARK: - Internal Methods
-	//**************************************************
 	
 	//**************************************************
 	// MARK: - Public Methods
@@ -90,8 +84,6 @@ class PlaceDetailViewModel: NSObject {
 			completion(success: success)
 		}
 	}
-	
-	
 	
 	//**************************************************
 	// MARK: - Override Public Methods

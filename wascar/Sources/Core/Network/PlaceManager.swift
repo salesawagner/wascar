@@ -88,6 +88,26 @@ class PlaceManager: NSObject {
 		}
 	}
 	
+	class func calculateDistance(origin: CLLocationCoordinate2D, destination: CLLocationCoordinate2D, completion: (distance: Distance?) -> Void ) -> Void {
+		let network = NetworkManager()
+		var parameters = [String : String]()
+		parameters["origins"] = "\(origin.latitude),\(origin.longitude)"
+		parameters["destinations"] = "\(destination.latitude),\(destination.longitude)"
+		network.request(.GET,
+		                stringURL: URL.googleMatrixURL,
+		                parameters: parameters,
+		                header: nil,
+		                needsHeaderAuthorization: false) { (response) in
+							switch response {
+							case let .SuccessResponseHandler(response):
+								completion(distance: Distance(response))
+							case .FailureResponseHandler(_):
+								completion(distance: nil)
+							}
+							
+		}
+	}
+	
 	//**************************************************
 	// MARK: - Override Public Methods
 	//**************************************************

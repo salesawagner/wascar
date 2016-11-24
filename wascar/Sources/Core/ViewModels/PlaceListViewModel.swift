@@ -54,7 +54,11 @@ class PlaceListViewModel: NSObject {
 		self.placeDetailViewModels.append(detailViewModel)
 	}
 	
-	private func setupPlaces(places: [Place]?) {
+	//**************************************************
+	// MARK: - Internal Methods
+	//**************************************************
+	
+	internal func setupPlaces(places: [Place]?) {
 		if let places = places {
 			let placesSorted = places.sort({
 				$0.distance < $1.distance
@@ -64,10 +68,6 @@ class PlaceListViewModel: NSObject {
 			}
 		}
 	}
-	
-	//**************************************************
-	// MARK: - Internal Methods
-	//**************************************************
 	
 	//**************************************************
 	// MARK: - Public Methods
