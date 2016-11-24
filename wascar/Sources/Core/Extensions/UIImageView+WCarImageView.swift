@@ -1,5 +1,5 @@
 //
-//  WCarImageView
+//  UIImageView+WCarImageView.swift
 //  wascar
 //
 //  Created by Wagner Sales on 24/11/16.
@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 
 extension UIImageView {
-	func setImageWithUrl(photoUrl: String) {
+	func WCARsetImageWithUrl(photoUrl: String) {
 		let url = NSURL(string: photoUrl) ?? NSURL()
 		let placeHolder = UIImage(named:"img_header")
 		self.af_setImageWithURL(

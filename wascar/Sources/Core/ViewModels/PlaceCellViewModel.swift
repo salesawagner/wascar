@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftLocation
 
 //**************************************************************************************************
 //
@@ -34,10 +35,7 @@ class PlaceCellViewModel: NSObject {
 	
 	var photoUrl: String
 	var name: String
-	var distance: String {
-		// TODO: calculate distance with user location and place location
-		return "7 km"
-	}
+	var distance: String = ""
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -46,6 +44,12 @@ class PlaceCellViewModel: NSObject {
 	init(place: Place) {
 		self.photoUrl	= place.photoUrl
 		self.name		= place.name
+		
+		if let userLocation = Location.lastLocation {
+			let placeLocation = place.location
+			let distance = userLocation.distanceFromLocation(placeLocation)
+			self.distance = distance.WCARmetersToString()
+		}
 	}
 	
 	//**************************************************

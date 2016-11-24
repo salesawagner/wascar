@@ -66,7 +66,7 @@ class PlaceCell: UITableViewCell {
 	//**************************************************
 	
 	func setup(viewModel: PlaceCellViewModel) {
-		self.photoImageView.setImageWithUrl(viewModel.photoUrl)
+		self.photoImageView.WCARsetImageWithUrl(viewModel.photoUrl)
 		self.nameLabel.text = viewModel.name
 		self.distanceLabel.text = viewModel.distance
 	}

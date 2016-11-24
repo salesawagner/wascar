@@ -104,7 +104,7 @@ class PlaceDetailViewController: WCARViewController {
 		} else {
 			self.openNowView.setStatus(.Close)
 		}
-		self.photoImageView.setImageWithUrl(self.viewModel.photoUrl)
+		self.photoImageView.WCARsetImageWithUrl(self.viewModel.photoUrl)
 	}
 
 }

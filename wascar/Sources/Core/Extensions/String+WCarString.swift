@@ -1,5 +1,5 @@
 //
-//  WCarString
+//  String+WCarString.swift
 //  wascar
 //
 //  Created by Wagner Sales on 23/11/16.
@@ -9,7 +9,7 @@
 import UIKit
 
 extension String {
-	var localized: String {
+	var WCARlocalized: String {
 		return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
 	}
 }

@@ -12,32 +12,32 @@ struct L {
 
     //NAVBAR
 	static var repairList: String {
-		return "REPAIR_LIST".localized
+		return "REPAIR_LIST".WCARlocalized
 	}
 	
 	static var details: String {
-		return "DETAILS".localized
+		return "DETAILS".WCARlocalized
 	}
 	
 	//DETAILS VIEW
 	static var address: String {
-		return "ADDRESS".localized
+		return "ADDRESS".WCARlocalized
 	}
 	
 	static var open: String {
-		return "OPEN".localized
+		return "OPEN".WCARlocalized
 	}
 	
 	static var rating: String {
-		return "RATING".localized
+		return "RATING".WCARlocalized
 	}
 	
 	//OPEN NOW VIEW
 	static var openNow: String {
-		return "OPEN_NOW".localized
+		return "OPEN_NOW".WCARlocalized
 	}
 	
 	static var closed: String {
-		return "CLOSED".localized
+		return "CLOSED".WCARlocalized
 	}
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import CoreLocation
 
 //**************************************************************************************************
 //
@@ -42,6 +43,9 @@ class Place: NSObject {
 	// Location
 	var latitude: Double
 	var longitude: Double
+	var location: CLLocation {
+		return CLLocation(latitude: latitude, longitude: longitude)
+	}
 	
 	// Open hours
 	var openNow: Bool
