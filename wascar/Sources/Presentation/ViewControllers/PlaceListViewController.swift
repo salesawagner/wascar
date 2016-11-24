@@ -35,6 +35,7 @@ class PlaceListViewController: WCARTableViewController {
 	//**************************************************
 	
 	var viewModel: PlaceListViewModel = PlaceListViewModel()
+	var refreshControl: UIRefreshControl!
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -44,9 +45,22 @@ class PlaceListViewController: WCARTableViewController {
 	// MARK: - Private Methods
 	//**************************************************
 	
+	private func setupPullRefresh() {
+		self.refreshControl = UIRefreshControl()
+		self.refreshControl.addTarget(self, action: #selector(self.didRefresh(_:)), forControlEvents: .ValueChanged)
+		self.tableView.addSubview(self.refreshControl)
+	}
+	
 	//**************************************************
 	// MARK: - Internal Methods
 	//**************************************************
+	
+	internal func didRefresh(refreshControl: UIRefreshControl) {
+		self.viewModel.loadPlaces { (success) in
+			self.tableView.reloadData()
+			self.refreshControl.endRefreshing()
+		}
+	}
 	
 	//**************************************************
 	// MARK: - Public Methods
@@ -58,6 +72,7 @@ class PlaceListViewController: WCARTableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.setupPullRefresh()
 		self.viewModel.loadPlaces { (success) in
 			self.tableView.reloadData()
 		}
