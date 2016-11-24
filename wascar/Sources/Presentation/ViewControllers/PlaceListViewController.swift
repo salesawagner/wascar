@@ -51,13 +51,25 @@ class PlaceListViewController: WCARTableViewController {
 		self.tableView.addSubview(self.refreshControl)
 	}
 	
+	private func loadPlaces(loading: Bool = true, completion: CompletionSuccess? = nil) {
+		if loading {
+			self.startLoading()
+		}
+		self.viewModel.loadPlaces { (success) in
+			self.tableView.reloadData()
+			self.stopLoading(error: success)
+			if let completion = completion {
+				completion(success: success)
+			}
+		}
+	}
+	
 	//**************************************************
 	// MARK: - Internal Methods
 	//**************************************************
 	
 	internal func didRefresh(refreshControl: UIRefreshControl) {
-		self.viewModel.loadPlaces { (success) in
-			self.tableView.reloadData()
+		self.loadPlaces { (success) in
 			self.refreshControl.endRefreshing()
 		}
 	}
@@ -73,9 +85,7 @@ class PlaceListViewController: WCARTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.setupPullRefresh()
-		self.viewModel.loadPlaces { (success) in
-			self.tableView.reloadData()
-		}
+		self.loadPlaces()
 	}
 	
 	override func setupNavigation() {

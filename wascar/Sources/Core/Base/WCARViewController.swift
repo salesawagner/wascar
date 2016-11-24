@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 //**************************************************************************************************
 //
@@ -31,6 +32,12 @@ class WCARViewController: UIViewController {
 	//**************************************************
 	// MARK: - Properties
 	//**************************************************
+
+	// SCLAlertView
+	var loading: SCLAlertView?
+	var loadingResponse: SCLAlertViewResponder?
+	var alert: SCLAlertView?
+	var alertResponse: SCLAlertViewResponder?
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -86,6 +93,76 @@ class WCARViewController: UIViewController {
 	
 	internal func pop() {
 		self.navigationController?.popViewControllerAnimated(true)
+	}
+	
+	//*************************
+	// MARK: Loading
+	//*************************
+	
+	internal func startLoading(title: String = "Wait", subtitle : String = "I'm loading...", cancelTitle : String? = nil) {
+		
+		if self.loading == nil {
+			
+			let app = SCLAlertView.SCLAppearance(showCloseButton: false)
+			let loading = SCLAlertView(appearance: app)
+			
+			if let cancel = cancelTitle {
+				loading.addButton(cancel, action: {
+					self.stopLoading()
+				})
+			}
+			
+			self.loading = loading
+			self.loadingResponse = loading.showWait(title, subTitle: subtitle, colorStyle: UIColor.WCARBlueColor().WCARColorToUInt())
+			self.loadingResponse?.setDismissBlock({
+				self.loadingDidClose()
+			})
+		}
+	}
+	
+	internal func stopLoading(error hasErro: Bool = false) {
+		
+		if hasErro {
+			self.loadingResponse?.setDismissBlock({
+				self.showError()
+			})
+		}
+		
+		if self.loading != nil {
+			self.loadingResponse?.close()
+			self.loading = nil
+		}
+	}
+	
+	internal func loadingDidClose() {
+		self.loadingResponse = nil
+	}
+	
+	//*************************
+	// MARK: Loading
+	//*************************
+	
+	internal func showError(title: String = "Sorry", subtitle: String = "Something went wrong.", cancelTitle: String = "OK") {
+		self.showAlert(title, subtitle: subtitle, cancelTitle: cancelTitle, style: .Error)
+	}
+	
+	internal func showAlert(title: String, subtitle: String, cancelTitle: String, style: SCLAlertViewStyle) {
+		
+		if self.alert == nil {
+			
+			let alert = SCLAlertView()
+			self.alert = alert
+			self.alertResponse = alert.showTitle(title, subTitle: subtitle, style: style, closeButtonTitle: cancelTitle, duration: 0, colorStyle: UIColor.WCARRedColor().WCARColorToUInt())
+			
+			self.alertResponse?.setDismissBlock({
+				self.alertDidClose()
+			})
+		}
+	}
+	
+	internal func alertDidClose() {
+		self.alert = nil
+		self.alertResponse = nil
 	}
 	
 	//**************************************************

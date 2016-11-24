@@ -154,8 +154,8 @@
 		A72C64F71DE50964008636A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A7005BA21DE6DCE800E7D464 /* Helpers */,
 				A72C64F81DE50964008636A9 /* AppDelegate.swift */,
+				A7005BA21DE6DCE800E7D464 /* Helpers */,
 				A790749D1DE66994000CD75C /* Network */,
 				A790749A1DE662D0000CD75C /* CustomObjects */,
 				A76A366B1DE5543D003764CE /* Language */,

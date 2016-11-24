@@ -28,6 +28,23 @@ extension UIColor {
 		self.init(red: red, green: green, blue: blue, alpha: CGFloat(a))
 	}
 	
+	public func WCARColorToUInt() -> UInt? {
+		
+		var intColor: UInt?
+		
+		var fRed : CGFloat = 0, fGreen : CGFloat = 0, fBlue : CGFloat = 0, fAlpha: CGFloat = 0
+		if self.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha) {
+			let iRed	= UInt(fRed * 255.0)
+			let iGreen	= UInt(fGreen * 255.0)
+			let iBlue	= UInt(fBlue * 255.0)
+			let iAlpha	= UInt(fAlpha * 255.0)
+			
+			intColor = (iAlpha << 24) + (iRed << 16) + (iGreen << 8) + iBlue
+		}
+		
+		return intColor
+	}
+	
 	class func WCARBackgroundColor() -> UIColor {
 		return UIColor(r: 248, g: 248, b: 248, a: 1)
 	}
@@ -36,11 +53,15 @@ extension UIColor {
 		return UIColor(r: 75, g: 95, b: 131, a: 1)
 	}
 	
+	class func WCARRedColor() -> UIColor {
+		return UIColor(r: 165, g: 38, b: 38, a: 1)
+	}
+	
 	class func WCAROpenNowGreenColor() -> UIColor {
 		return UIColor(r: 104, g: 165, b: 38, a: 1)
 	}
 	
 	class func WCAROpenNowRedColor() -> UIColor {
-		return UIColor(r: 165, g: 38, b: 38, a: 1)
+		return UIColor.WCARRedColor()
 	}
 }
