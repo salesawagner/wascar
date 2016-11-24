@@ -1,5 +1,5 @@
 //
-//  ListTableViewCellVM.swift
+//  PlaceCell.swift
 //  wascar
 //
 //  Created by Wagner Sales on 23/11/16.
@@ -14,6 +14,8 @@ import UIKit
 //
 //**************************************************************************************************
 
+let kPlaceCellIdentifier = "PlaceCellIdentifier"
+
 //**************************************************************************************************
 //
 // MARK: - Definitions -
@@ -22,47 +24,38 @@ import UIKit
 
 //**************************************************************************************************
 //
-// MARK: - Class - ListTableViewCellVM
+// MARK: - Class - PlaceCell
 //
 //**************************************************************************************************
 
-class ListTableViewCellVM: NSObject {
-	
+class PlaceCell: UITableViewCell {
+
 	//**************************************************
 	// MARK: - Properties
 	//**************************************************
 	
-	var place: Place!
-	
-	var photoUrl: String {
-		return self.place.imageUrl
-	}
-	
-	var name: String {
-		return self.place.name
-	}
-	
-	var distance: String {
-		// TODO: calculate distance with user location and place location
-		return "7 km"
-	}
+	@IBOutlet weak var photoImageView: UIImageView!
+	@IBOutlet weak var distanceLabel: UILabel!
+	@IBOutlet weak var nameLabel: UILabel!
 	
 	//**************************************************
 	// MARK: - Constructors
 	//**************************************************
 	
-	private override init() {
-		super.init()
-	}
-	
-	convenience init(place: Place) {
-		self.init()
-		self.place = place
-	}
-	
 	//**************************************************
 	// MARK: - Private Methods
 	//**************************************************
+	
+	private func setupPhotoImage() {
+		self.photoImageView.layer.cornerRadius	= self.photoImageView.frame.size.width/2
+		self.photoImageView.layer.masksToBounds = self.photoImageView.layer.cornerRadius > 0
+	}
+	
+	private func resetData() {
+		self.photoImageView.image = nil
+		self.distanceLabel.text = ""
+		self.nameLabel.text = ""
+	}
 	
 	//**************************************************
 	// MARK: - Internal Methods
@@ -72,8 +65,23 @@ class ListTableViewCellVM: NSObject {
 	// MARK: - Public Methods
 	//**************************************************
 	
+	func setup(viewModel: PlaceCellViewModel) {
+		self.photoImageView.setImageWithUrl(viewModel.photoUrl)
+		self.nameLabel.text = viewModel.name
+		self.distanceLabel.text = viewModel.distance
+	}
+	
 	//**************************************************
 	// MARK: - Override Public Methods
 	//**************************************************
 	
+    override func awakeFromNib() {
+        super.awakeFromNib()
+		self.resetData()
+		self.setupPhotoImage()
+    }
+	
+	override func prepareForReuse() {
+		self.resetData()
+	}
 }

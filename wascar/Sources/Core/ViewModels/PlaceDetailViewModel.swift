@@ -1,8 +1,8 @@
 //
-//  ListViewControllerVM.swift
+//  PlaceDetailViewModel.swift
 //  wascar
 //
-//  Created by Wagner Sales on 23/11/16.
+//  Created by Wagner Sales on 24/11/16.
 //  Copyright © 2016 Wagner Sales. All rights reserved.
 //
 
@@ -20,34 +20,35 @@ import UIKit
 //
 //**************************************************************************************************
 
-typealias CompletionSuccess = ((success: Bool) -> Void)
-
 //**************************************************************************************************
 //
-// MARK: - Class - ListTableViewCellVM
+// MARK: - Class - PlaceDetailViewModel
 //
 //**************************************************************************************************
 
-class ListViewControllerVM: NSObject {
+class PlaceDetailViewModel: NSObject {
 	
 	//**************************************************
 	// MARK: - Properties
 	//**************************************************
 
-	var places: [Place] = [Place(),Place(),Place(),Place(),Place()]
-	var completion: CompletionSuccess!
+	var title = L.details
+	var placeId: String
+	var address: String
+	var openNow: Bool
+	var rating: String
+	var photoUrl: String
 	
 	//**************************************************
 	// MARK: - Constructors
 	//**************************************************
 	
-	private override init() {
-		super.init()
-	}
-	
-	convenience init(completion: CompletionSuccess) {
-		self.init()
-		self.completion = completion
+	init(place: Place) {
+		self.placeId	= place.id
+		self.address	= place.address
+		self.openNow	= place.openNow
+		self.rating		= String(format: "%.1f", place.rating)
+		self.photoUrl	= place.photoUrl
 	}
 	
 	//**************************************************
@@ -61,10 +62,6 @@ class ListViewControllerVM: NSObject {
 	//**************************************************
 	// MARK: - Public Methods
 	//**************************************************
-	
-	func loadPlaces() {
-		self.completion(success: true)
-	}
 	
 	//**************************************************
 	// MARK: - Override Public Methods

@@ -13,19 +13,25 @@
 		A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FA1DE50964008636A9 /* WCARTableViewController.swift */; };
 		A72C65091DE50964008636A9 /* WCARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FB1DE50964008636A9 /* WCARViewController.swift */; };
 		A72C650A1DE50964008636A9 /* UIFont+WCarFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FD1DE50964008636A9 /* UIFont+WCarFont.swift */; };
-		A72C650B1DE50964008636A9 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C65001DE50964008636A9 /* ListTableViewCell.swift */; };
-		A72C650C1DE50964008636A9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C65021DE50964008636A9 /* ListViewController.swift */; };
+		A72C650B1DE50964008636A9 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C65001DE50964008636A9 /* PlaceCell.swift */; };
+		A72C650C1DE50964008636A9 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C65021DE50964008636A9 /* PlaceListViewController.swift */; };
 		A76A365E1DE52DDB003764CE /* UIColor+WCarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A365D1DE52DDB003764CE /* UIColor+WCarColor.swift */; };
-		A76A36611DE538A7003764CE /* ListTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A36601DE538A7003764CE /* ListTableViewCellVM.swift */; };
+		A76A36611DE538A7003764CE /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A36601DE538A7003764CE /* PlaceCellViewModel.swift */; };
 		A76A36641DE538FF003764CE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A36631DE538FF003764CE /* Place.swift */; };
-		A76A36661DE54F61003764CE /* ListViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A36651DE54F61003764CE /* ListViewControllerVM.swift */; };
+		A76A36661DE54F61003764CE /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A36651DE54F61003764CE /* PlaceListViewModel.swift */; };
 		A76A366A1DE553CF003764CE /* WCarString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A36691DE553CF003764CE /* WCarString.swift */; };
 		A76A366D1DE5544E003764CE /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A366C1DE5544E003764CE /* Localized.swift */; };
 		A76A36721DE555CD003764CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76A36701DE555CD003764CE /* LaunchScreen.storyboard */; };
 		A76A36731DE555CD003764CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76A36711DE555CD003764CE /* Main.storyboard */; };
 		A76A36771DE55643003764CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76A36751DE55643003764CE /* Localizable.strings */; };
+		A790749C1DE66308000CD75C /* OpenNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790749B1DE66308000CD75C /* OpenNow.swift */; };
+		A790749F1DE66994000CD75C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790749E1DE66994000CD75C /* URL.swift */; };
+		A79074A21DE66B8D000CD75C /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A11DE66B8D000CD75C /* PlaceManager.swift */; };
+		A79074A61DE68633000CD75C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A51DE68633000CD75C /* Photo.swift */; };
+		A79074A81DE688FE000CD75C /* WCarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A71DE688FE000CD75C /* WCarImageView.swift */; };
 		A7BF29E11DE5091200916EDC /* wascarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF29E01DE5091200916EDC /* wascarTests.swift */; };
-		A7F2047C1DE50C0600B10D09 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F2047B1DE50C0600B10D09 /* DetailViewController.swift */; };
+		A7E246381DE6475800E2902C /* PlaceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E246371DE6475800E2902C /* PlaceDetailViewModel.swift */; };
+		A7F2047C1DE50C0600B10D09 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F2047B1DE50C0600B10D09 /* PlaceDetailViewController.swift */; };
 		E977FAB3A4BDE5F7964B72AF /* Pods_wascar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C56570087B3C866546BAC8 /* Pods_wascar.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,22 +54,28 @@
 		A72C64FA1DE50964008636A9 /* WCARTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCARTableViewController.swift; sourceTree = "<group>"; };
 		A72C64FB1DE50964008636A9 /* WCARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCARViewController.swift; sourceTree = "<group>"; };
 		A72C64FD1DE50964008636A9 /* UIFont+WCarFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+WCarFont.swift"; sourceTree = "<group>"; };
-		A72C65001DE50964008636A9 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		A72C65021DE50964008636A9 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A72C65001DE50964008636A9 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		A72C65021DE50964008636A9 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		A76A365D1DE52DDB003764CE /* UIColor+WCarColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+WCarColor.swift"; sourceTree = "<group>"; };
-		A76A36601DE538A7003764CE /* ListTableViewCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewCellVM.swift; path = ViewModels/ListTableViewCellVM.swift; sourceTree = "<group>"; };
+		A76A36601DE538A7003764CE /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceCellViewModel.swift; path = ViewModels/PlaceCellViewModel.swift; sourceTree = "<group>"; };
 		A76A36631DE538FF003764CE /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = Models/Place.swift; sourceTree = "<group>"; };
-		A76A36651DE54F61003764CE /* ListViewControllerVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewControllerVM.swift; path = ViewModels/ListViewControllerVM.swift; sourceTree = "<group>"; };
+		A76A36651DE54F61003764CE /* PlaceListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceListViewModel.swift; path = ViewModels/PlaceListViewModel.swift; sourceTree = "<group>"; };
 		A76A36691DE553CF003764CE /* WCarString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCarString.swift; sourceTree = "<group>"; };
 		A76A366C1DE5544E003764CE /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localized.swift; path = Language/Localized.swift; sourceTree = "<group>"; };
 		A76A36701DE555CD003764CE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A76A36711DE555CD003764CE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A76A36761DE55643003764CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A790749B1DE66308000CD75C /* OpenNow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenNow.swift; path = Core/CustomObjects/OpenNow.swift; sourceTree = "<group>"; };
+		A790749E1DE66994000CD75C /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		A79074A11DE66B8D000CD75C /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
+		A79074A51DE68633000CD75C /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Models/Photo.swift; sourceTree = "<group>"; };
+		A79074A71DE688FE000CD75C /* WCarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCarImageView.swift; sourceTree = "<group>"; };
 		A7BF29C81DE5091200916EDC /* wascar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wascar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF29DC1DE5091200916EDC /* wascarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wascarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF29E01DE5091200916EDC /* wascarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wascarTests.swift; sourceTree = "<group>"; };
 		A7BF29E21DE5091200916EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7F2047B1DE50C0600B10D09 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A7E246371DE6475800E2902C /* PlaceDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailViewModel.swift; path = ViewModels/PlaceDetailViewModel.swift; sourceTree = "<group>"; };
+		A7F2047B1DE50C0600B10D09 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		A9CB8163C58350D942119F21 /* Pods-wascarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.release.xcconfig"; sourceTree = "<group>"; };
 		B938479661803B8E1102EAAF /* Pods_wascarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wascarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C87B99BC707479D3EBC826 /* Pods-wascar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,8 +142,10 @@
 		A72C64F71DE50964008636A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A76A366B1DE5543D003764CE /* Language */,
+				A790749D1DE66994000CD75C /* Network */,
+				A790749A1DE662D0000CD75C /* CustomObjects */,
 				A72C64F81DE50964008636A9 /* AppDelegate.swift */,
+				A76A366B1DE5543D003764CE /* Language */,
 				A76A36621DE538E7003764CE /* Models */,
 				A76A365F1DE5388D003764CE /* ViewModels */,
 				A72C64F91DE50964008636A9 /* Base */,
@@ -152,6 +166,7 @@
 		A72C64FC1DE50964008636A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A79074A71DE688FE000CD75C /* WCarImageView.swift */,
 				A76A36691DE553CF003764CE /* WCarString.swift */,
 				A76A365D1DE52DDB003764CE /* UIColor+WCarColor.swift */,
 				A72C64FD1DE50964008636A9 /* UIFont+WCarFont.swift */,
@@ -171,7 +186,7 @@
 		A72C64FF1DE50964008636A9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A72C65001DE50964008636A9 /* ListTableViewCell.swift */,
+				A72C65001DE50964008636A9 /* PlaceCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -179,8 +194,8 @@
 		A72C65011DE50964008636A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A72C65021DE50964008636A9 /* ListViewController.swift */,
-				A7F2047B1DE50C0600B10D09 /* DetailViewController.swift */,
+				A72C65021DE50964008636A9 /* PlaceListViewController.swift */,
+				A7F2047B1DE50C0600B10D09 /* PlaceDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,8 +203,9 @@
 		A76A365F1DE5388D003764CE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A76A36651DE54F61003764CE /* ListViewControllerVM.swift */,
-				A76A36601DE538A7003764CE /* ListTableViewCellVM.swift */,
+				A7E246371DE6475800E2902C /* PlaceDetailViewModel.swift */,
+				A76A36651DE54F61003764CE /* PlaceListViewModel.swift */,
+				A76A36601DE538A7003764CE /* PlaceCellViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -197,6 +213,7 @@
 		A76A36621DE538E7003764CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A79074A51DE68633000CD75C /* Photo.swift */,
 				A76A36631DE538FF003764CE /* Place.swift */,
 			);
 			name = Models;
@@ -216,6 +233,24 @@
 				A76A36751DE55643003764CE /* Localizable.strings */,
 			);
 			path = Language;
+			sourceTree = "<group>";
+		};
+		A790749A1DE662D0000CD75C /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A790749B1DE66308000CD75C /* OpenNow.swift */,
+			);
+			name = CustomObjects;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A790749D1DE66994000CD75C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A79074A11DE66B8D000CD75C /* PlaceManager.swift */,
+				A790749E1DE66994000CD75C /* URL.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A7BF29BF1DE5091200916EDC = {
@@ -468,17 +503,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76A36661DE54F61003764CE /* ListViewControllerVM.swift in Sources */,
+				A76A36661DE54F61003764CE /* PlaceListViewModel.swift in Sources */,
 				A72C650A1DE50964008636A9 /* UIFont+WCarFont.swift in Sources */,
+				A79074A81DE688FE000CD75C /* WCarImageView.swift in Sources */,
+				A790749C1DE66308000CD75C /* OpenNow.swift in Sources */,
+				A7E246381DE6475800E2902C /* PlaceDetailViewModel.swift in Sources */,
+				A79074A21DE66B8D000CD75C /* PlaceManager.swift in Sources */,
 				A72C65091DE50964008636A9 /* WCARViewController.swift in Sources */,
 				A76A366A1DE553CF003764CE /* WCarString.swift in Sources */,
-				A72C650C1DE50964008636A9 /* ListViewController.swift in Sources */,
+				A72C650C1DE50964008636A9 /* PlaceListViewController.swift in Sources */,
+				A790749F1DE66994000CD75C /* URL.swift in Sources */,
 				A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */,
-				A72C650B1DE50964008636A9 /* ListTableViewCell.swift in Sources */,
+				A72C650B1DE50964008636A9 /* PlaceCell.swift in Sources */,
+				A79074A61DE68633000CD75C /* Photo.swift in Sources */,
 				A72C65071DE50964008636A9 /* AppDelegate.swift in Sources */,
 				A76A365E1DE52DDB003764CE /* UIColor+WCarColor.swift in Sources */,
-				A7F2047C1DE50C0600B10D09 /* DetailViewController.swift in Sources */,
-				A76A36611DE538A7003764CE /* ListTableViewCellVM.swift in Sources */,
+				A7F2047C1DE50C0600B10D09 /* PlaceDetailViewController.swift in Sources */,
+				A76A36611DE538A7003764CE /* PlaceCellViewModel.swift in Sources */,
 				A76A366D1DE5544E003764CE /* Localized.swift in Sources */,
 				A76A36641DE538FF003764CE /* Place.swift in Sources */,
 			);

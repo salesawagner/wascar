@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  PlaceListViewController.swift
 //  wascar
 //
 //  Created by Wagner Sales on 23/11/16.
@@ -24,17 +24,17 @@ private let kDetailSegue = "DetailSegue"
 
 //**************************************************************************************************
 //
-// MARK: - Class -
+// MARK: - Class - PlaceListViewController
 //
 //**************************************************************************************************
 
-class ListViewController: WCARTableViewController {
+class PlaceListViewController: WCARTableViewController {
 
 	//**************************************************
 	// MARK: - Properties
 	//**************************************************
 	
-	var listVM: ListViewControllerVM?
+	var viewModel: PlaceListViewModel = PlaceListViewModel()
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -43,13 +43,6 @@ class ListViewController: WCARTableViewController {
 	//**************************************************
 	// MARK: - Private Methods
 	//**************************************************
-	
-	private func setupVM() {
-		self.listVM = ListViewControllerVM(completion: { (success) in
-			// TODO:
-			self.tableView.reloadData()
-		})
-	}
 	
 	//**************************************************
 	// MARK: - Internal Methods
@@ -65,19 +58,21 @@ class ListViewController: WCARTableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.setupVM()
+		self.viewModel.loadPlaces({ (success) in
+			self.tableView.reloadData()
+		})
 	}
 	
 	override func setupNavigation() {
 		super.setupNavigation()
-		self.title = L.repairList
+		self.title = self.viewModel.title
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == kDetailSegue {
-			if let viewController = segue.destinationViewController as? DetailViewController {
-				if let place = sender as? Place {
-					viewController.place = place
+			if let viewController = segue.destinationViewController as? PlaceDetailViewController {
+				if let viewModel = sender as? PlaceDetailViewModel {
+					viewController.viewModel = viewModel
 				}
 			}
 		}
@@ -90,23 +85,22 @@ class ListViewController: WCARTableViewController {
 //
 //**********************************************************************************************************
 
-extension ListViewController: UITableViewDataSource {
-	
+extension PlaceListViewController: UITableViewDataSource {
+
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.listVM?.places.count ?? 0
+		return self.viewModel.placeCellViewModels.count
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
 		var cell: UITableViewCell!
-		if let myCell = tableView.dequeueReusableCellWithIdentifier(kListCellIdentifier) as? ListTableViewCell {
-			if let places = self.listVM?.places {
-				let place = places[indexPath.row]
-				myCell.setup(ListTableViewCellVM(place: place))
-			}
+		if let myCell = tableView.dequeueReusableCellWithIdentifier(kPlaceCellIdentifier) as? PlaceCell {
+			let placeCellViewModels = self.viewModel.placeCellViewModels
+			let cellViewModel = placeCellViewModels[indexPath.row]
+			myCell.setup(cellViewModel)
 			cell = myCell
 		} else {
-			cell = UITableViewCell(style: .Default, reuseIdentifier: kListCellIdentifier)
+			cell = UITableViewCell(style: .Default, reuseIdentifier: kPlaceCellIdentifier)
 		}
 		return cell
 	}
@@ -118,11 +112,15 @@ extension ListViewController: UITableViewDataSource {
 //
 //**********************************************************************************************************
 
-extension ListViewController: UITableViewDelegate {
+extension PlaceListViewController: UITableViewDelegate {
+	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 		return 130
 	}
+	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		self.performSegueWithIdentifier(kDetailSegue, sender: Place())
+		let detailViewModels = self.viewModel.placeDetailViewModels
+		let detailViewModel = detailViewModels[indexPath.row]
+		self.performSegueWithIdentifier(kDetailSegue, sender: detailViewModel)
 	}
 }

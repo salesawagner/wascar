@@ -1,5 +1,5 @@
 //
-//  ListTableViewCell.swift
+//  PlaceDetailViewController.swift
 //  wascar
 //
 //  Created by Wagner Sales on 23/11/16.
@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireImage
 
 //**************************************************************************************************
 //
@@ -22,17 +20,34 @@ import AlamofireImage
 //
 //**************************************************************************************************
 
-let kListCellIdentifier = "ListCellIdentifier"
+//**************************************************************************************************
+//
+// MARK: - Class - PlaceDetailViewController
+//
+//**************************************************************************************************
 
-class ListTableViewCell: UITableViewCell {
+class PlaceDetailViewController: WCARViewController {
 
 	//**************************************************
 	// MARK: - Properties
 	//**************************************************
 	
+	var viewModel: PlaceDetailViewModel!
+	
+	// Photo
 	@IBOutlet weak var photoImageView: UIImageView!
-	@IBOutlet weak var distanceLabel: UILabel!
-	@IBOutlet weak var nameLabel: UILabel!
+	
+	// Address
+	@IBOutlet weak var addressLabel: UILabel!
+	@IBOutlet weak var addressValueLabel: UILabel!
+	
+	// Open now
+	@IBOutlet weak var openLabel: UILabel!
+	@IBOutlet weak var openNowView: OpenNow!
+	
+	// Rating
+	@IBOutlet weak var ratingLabel: UILabel!
+	@IBOutlet weak var ratingValueLabel: UILabel!
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -42,18 +57,6 @@ class ListTableViewCell: UITableViewCell {
 	// MARK: - Private Methods
 	//**************************************************
 	
-	private func setupPhotoImage() {
-		self.photoImageView.layer.cornerRadius	= self.photoImageView.frame.size.width/2
-		self.photoImageView.layer.masksToBounds = self.photoImageView.layer.cornerRadius > 0
-		self.photoImageView.backgroundColor		= UIColor.greenColor()
-	}
-	
-	private func resetData() {
-		self.photoImageView.image = nil
-		self.distanceLabel.text = ""
-		self.nameLabel.text = ""
-	}
-	
 	//**************************************************
 	// MARK: - Internal Methods
 	//**************************************************
@@ -62,27 +65,36 @@ class ListTableViewCell: UITableViewCell {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	func setup(cellVM: ListTableViewCellVM) {
-		Alamofire.request(.GET, cellVM.photoUrl).responseImage { response in
-			if let image = response.result.value {
-				self.photoImageView.image = image
-			}
-		}
-		self.nameLabel.text = cellVM.name
-		self.distanceLabel.text = cellVM.distance
-	}
-	
 	//**************************************************
 	// MARK: - Override Public Methods
 	//**************************************************
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-		self.resetData()
-		self.setupPhotoImage()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+		self.setupUI()
     }
 	
-	override func prepareForReuse() {
-		self.resetData()
+	override func setupNavigation() {
+		super.setupNavigation()
+		self.title = self.viewModel.title
 	}
+	
+	override func setupUI() {
+		super.setupUI()
+		self.view.backgroundColor = UIColor.whiteColor()
+		self.addressLabel.text = L.address
+		self.openLabel.text = L.open
+		self.ratingLabel.text = L.rating
+		
+		// Values
+		self.addressValueLabel.text = self.viewModel.address
+		self.ratingValueLabel.text = self.viewModel.rating
+		if self.viewModel.openNow {
+			self.openNowView.setStatus(.Open)
+		} else {
+			self.openNowView.setStatus(.Close)
+		}
+		self.photoImageView.setImageWithUrl(self.viewModel.photoUrl)
+	}
+
 }
