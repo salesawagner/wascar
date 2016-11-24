@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 //**************************************************************************************************
 //
@@ -28,73 +29,68 @@ import UIKit
 
 class Place: NSObject {
 	
-	var id: String { // place_id
-		return "ChIJLyNIwpJmZIgRKrlDg5TZti0"
-	}
-	
-	var name: String { // name
-		return "Import Auto Maintenance"
-	}
-	
-	var address: String { //formatted_address
-		return "1616 Broadway, Nashville, TN 37203, United States"
-	}
-	
-	var latitude: Double { // "geometry":{"location":{"lat":
-		return 36.153749
-	}
-	
-	var longitude: Double { // "geometry":{"location":{"lng":
-		return -86.79380049999999
-	}
-	
-	var imageUrl: String { //icon
-		return "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"
-	}
-	
-	var rating: CGFloat { //rating
-		return 4.2
-	}
-	
-	var openNow: Bool { //open_now
-		return true
-	}
-	
-	/*
-	"opening_hours": {
-		"periods": [
-			{
-				"close": {
-					"day": 1,
-					"time": "1800"
-				},
-				"open": {
-					"day": 1,
-					"time": "0800"
-				}
-			}
-		]
-	}
-	*/
-	var period: [String] {
-		var period = [String]()
-		period.append("Monday, 08:00-1800")
-		period.append("Monday, 08:00-1800")
-		period.append("Monday, 08:00-1800")
-		period.append("Monday, 08:00-1800")
-		period.append("Monday, 08:00-1800")
-		period.append("Monday, closed")
-		period.append("Monday, close")
-		return period
-	}
-	
 	//**************************************************
 	// MARK: - Properties
 	//**************************************************
 	
+	// Info
+	var id: String
+	var name: String
+	var address: String
+	var rating: Float
+	
+	// Location
+	var latitude: Double
+	var longitude: Double
+	
+	// Open hours
+	var openNow: Bool
+	var period = [String]()
+	
+	// Photo
+	var icon: String
+	var photos: [Photo]
+	var photoUrl: String {
+		var photoUrl = ""
+		if self.photos.count > 0 {
+			let photo = self.photos.first!
+			photoUrl = photo.url
+		} else if !self.icon.isEmpty {
+			photoUrl = self.icon
+		}
+		return photoUrl
+	}
+	
 	//**************************************************
 	// MARK: - Constructors
 	//**************************************************
+	
+	init(json: JSON) {
+		// Info
+		self.id = json["id"].stringValue
+		self.name = json["name"].stringValue
+		self.address = json["formatted_address"].stringValue
+		self.rating = json["rating"].floatValue
+		
+		// Location
+		let geometry = json["geometry"]
+		let location = geometry["location"]
+		self.latitude = location["lat"].doubleValue
+		self.longitude = location["lng"].doubleValue
+		
+		// Opening hours
+		let openingHours = json["opening_hours"]
+		self.openNow = openingHours["open_now"].boolValue
+		for day in openingHours["weekday_text"].arrayValue {
+			if !day.stringValue.isEmpty {
+				self.period.append(day.stringValue)
+			}
+		}
+		
+		// Photos
+		self.icon = json["icon"].stringValue
+		self.photos = Photo.arrayFromJson(json["photos"])
+	}
 	
 	//**************************************************
 	// MARK: - Private Methods
@@ -107,6 +103,14 @@ class Place: NSObject {
 	//**************************************************
 	// MARK: - Public Methods
 	//**************************************************
+	
+	class func arrayFromJson(json: JSON) -> [Place] {
+		var places = [Place]()
+		for placeJson in json.arrayValue {
+			places.append(Place(json: placeJson))
+		}
+		return places
+	}
 	
 	//**************************************************
 	// MARK: - Override Public Methods
