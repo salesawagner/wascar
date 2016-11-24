@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftLocation
 
 //**************************************************************************************************
 //
@@ -70,8 +71,9 @@ class PlaceListViewModel: NSObject {
 	//**************************************************
 	
 	func loadPlaces(completion: CompletionSuccess) {
-		PlaceManager.requestList { (places) in
-			PlaceManager.requestList({ (success, places) in
+		
+		Location.getLocation(withAccuracy: .Block, frequency: .OneShot, timeout: 50, onSuccess: { (location) in
+			PlaceManager.requestList(location, completion: { (success, places) in
 				if success {
 					self.setupPlaces(places)
 					completion(success: true)
@@ -79,6 +81,10 @@ class PlaceListViewModel: NSObject {
 					completion(success: false)
 				}
 			})
+		}) { (lastValidLocation, error) in
+			completion(success: false)
+			print(lastValidLocation)
+			print(error)
 		}
 	}
 	

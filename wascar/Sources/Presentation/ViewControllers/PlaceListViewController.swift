@@ -58,9 +58,9 @@ class PlaceListViewController: WCARTableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.viewModel.loadPlaces({ (success) in
+		self.viewModel.loadPlaces { (success) in
 			self.tableView.reloadData()
-		})
+		}
 	}
 	
 	override func setupNavigation() {

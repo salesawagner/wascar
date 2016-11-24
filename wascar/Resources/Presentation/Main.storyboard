@@ -193,6 +193,9 @@
                                         <state key="normal" image="btn_route">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="mapButtonTapped:" destination="xYJ-Ow-e0V" eventType="touchUpInside" id="mgQ-UP-WhQ"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pby-t4-1oS" userLabel="Address">
                                         <rect key="frame" x="0.0" y="178" width="600" height="19.5"/>
@@ -344,6 +347,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="9fq-Yz-fQy" id="wUg-cE-uQ2"/>
                         <outlet property="addressValueLabel" destination="ZH2-gl-sMm" id="mKl-2l-reP"/>
+                        <outlet property="nameValueLabel" destination="Hs5-Nt-Djv" id="5la-DN-TDz"/>
                         <outlet property="openLabel" destination="APF-YY-hAD" id="XoT-Ix-n0R"/>
                         <outlet property="openNowView" destination="Itr-Y7-fol" id="CSl-e6-k8G"/>
                         <outlet property="openValueLabel" destination="rIA-KP-44H" id="G2F-eZ-ic9"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3AC54325133C4303BE084631 /* Pods_wascarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B938479661803B8E1102EAAF /* Pods_wascarTests.framework */; };
+		A7005BA41DE6DD0100E7D464 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7005BA31DE6DD0100E7D464 /* Map.swift */; };
 		A72C65031DE50964008636A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72C64EE1DE50964008636A9 /* Assets.xcassets */; };
 		A72C65071DE50964008636A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64F81DE50964008636A9 /* AppDelegate.swift */; };
 		A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FA1DE50964008636A9 /* WCARTableViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		0BA3DA69A817F33BBF3C47AF /* Pods-wascar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.release.xcconfig"; sourceTree = "<group>"; };
 		4A8EA7C9BBD80116C1AEDA07 /* Pods-wascarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A7005BA31DE6DD0100E7D464 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Helpers/Map.swift; sourceTree = "<group>"; };
 		A72C64EE1DE50964008636A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A72C64F51DE50964008636A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72C64F81DE50964008636A9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7005BA21DE6DCE800E7D464 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A7005BA31DE6DD0100E7D464 /* Map.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		A72C64ED1DE50964008636A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,9 +152,10 @@
 		A72C64F71DE50964008636A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A7005BA21DE6DCE800E7D464 /* Helpers */,
+				A72C64F81DE50964008636A9 /* AppDelegate.swift */,
 				A790749D1DE66994000CD75C /* Network */,
 				A790749A1DE662D0000CD75C /* CustomObjects */,
-				A72C64F81DE50964008636A9 /* AppDelegate.swift */,
 				A76A366B1DE5543D003764CE /* Language */,
 				A76A36621DE538E7003764CE /* Models */,
 				A76A365F1DE5388D003764CE /* ViewModels */,
@@ -513,6 +524,7 @@
 				A76A366A1DE553CF003764CE /* WCarString.swift in Sources */,
 				A72C650C1DE50964008636A9 /* PlaceListViewController.swift in Sources */,
 				A790749F1DE66994000CD75C /* URL.swift in Sources */,
+				A7005BA41DE6DD0100E7D464 /* Map.swift in Sources */,
 				A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */,
 				A72C650B1DE50964008636A9 /* PlaceCell.swift in Sources */,
 				A79074A61DE68633000CD75C /* Photo.swift in Sources */,

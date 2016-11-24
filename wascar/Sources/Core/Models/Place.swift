@@ -69,9 +69,14 @@ class Place: NSObject {
 		// Info
 		self.id = json["place_id"].stringValue
 		self.name = json["name"].stringValue
-		self.address = json["formatted_address"].stringValue
 		self.rating = json["rating"].floatValue
-		
+
+		// Address
+		self.address = json["formatted_address"].stringValue
+		if self.address.isEmpty {
+			self.address = json["vicinity"].stringValue
+		}
+
 		// Location
 		let geometry = json["geometry"]
 		let location = geometry["location"]

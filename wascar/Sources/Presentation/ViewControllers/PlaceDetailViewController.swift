@@ -36,6 +36,7 @@ class PlaceDetailViewController: WCARViewController {
 	
 	// Photo
 	@IBOutlet weak var photoImageView: UIImageView!
+	@IBOutlet weak var nameValueLabel: UILabel!
 	
 	// Address
 	@IBOutlet weak var addressLabel: UILabel!
@@ -65,6 +66,9 @@ class PlaceDetailViewController: WCARViewController {
 	//**************************************************
 	// MARK: - Public Methods
 	//**************************************************
+
+	@IBAction func mapButtonTapped(sender: AnyObject) {
+	}
 	
 	//**************************************************
 	// MARK: - Override Public Methods
@@ -91,6 +95,7 @@ class PlaceDetailViewController: WCARViewController {
 		self.ratingLabel.text = L.rating
 		
 		// Values
+		self.nameValueLabel.text = self.viewModel.name
 		self.addressValueLabel.text = self.viewModel.address
 		self.ratingValueLabel.text = self.viewModel.rating
 		self.openValueLabel.text = self.viewModel.openingHours

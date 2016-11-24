@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
 //**************************************************************************************************
 //
@@ -54,10 +55,8 @@ class PlaceManager: NSObject {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	class func requestList(completion: (success: Bool, places: [Place]?) -> Void ) -> Request? {
-		//restaurant
-//		let url = URL.places("car_repair")
-		let url = URL.places("restaurant")
+	class func requestList(location: CLLocation, completion: (success: Bool, places: [Place]?) -> Void ) -> Request? {
+		let url = URL.places("car_repair", location: location)
 		return Alamofire.request(.GET, url, encoding: .JSON).responseJSON { response in
 			if let value = response.result.value {
 				let json = JSON(value)

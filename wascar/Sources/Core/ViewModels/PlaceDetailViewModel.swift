@@ -34,6 +34,7 @@ class PlaceDetailViewModel: NSObject {
 
 	var title = L.details
 	var placeId: String
+	var name: String
 	var address: String
 	var openingHours: String
 	var openNow: Bool
@@ -46,6 +47,7 @@ class PlaceDetailViewModel: NSObject {
 	
 	init(place: Place) {
 		self.placeId	= place.id
+		self.name		= place.name
 		self.address	= place.address
 		self.openNow	= place.openNow
 		self.rating		= String(format: "%.1f", place.rating)
@@ -68,7 +70,8 @@ class PlaceDetailViewModel: NSObject {
 			openingHours += openingHours.isEmpty ? "" : "\n"
 			openingHours += hour
 		}
-		self.openingHours = openingHours
+		self.openingHours	= openingHours
+		self.address		= place.address
 	}
 	
 	//**************************************************
@@ -87,6 +90,8 @@ class PlaceDetailViewModel: NSObject {
 			completion(success: success)
 		}
 	}
+	
+	
 	
 	//**************************************************
 	// MARK: - Override Public Methods

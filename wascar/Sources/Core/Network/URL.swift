@@ -6,6 +6,8 @@
 //  Copyright © 2016 Wagner Sales. All rights reserved.
 //
 
+import CoreLocation
+
 //**************************************************************************************************
 //
 // MARK: - Constants -
@@ -62,8 +64,19 @@ class URL {
 		return "\(self.placeApiUrl)/\(type)/json"
 	}
 	
-	class func places(type: String) -> String {
-		return "\(self.baseUrl("textsearch"))?types=\(type)&key=\(self.apiKey)"
+	class func places(type: String, location: CLLocation) -> String {
+		
+		let coordinate = location.coordinate
+		let latitude = coordinate.latitude
+		let longitude = coordinate.longitude
+
+		var url = "\(self.baseUrl("nearbysearch"))"
+		url += "?location=\(String(format: "%f,%f", latitude, longitude))"
+		url += "&radius=50000"
+		url += "&type=\(type)"
+		url += "&key=\(self.apiKey)"
+		
+		return url
 	}
 	
 	class func placeById(id: String) -> String {

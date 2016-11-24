@@ -7,6 +7,7 @@ target 'wascar' do
 	pod 'Alamofire',		'~> 3.5'
 	pod 'AlamofireImage'
 	pod 'SwiftyJSON',		'~> 2.4'
+	pod 'SwiftLocation',	'1.0.5'
 	
   target 'wascarTests' do
     inherit! :search_paths
