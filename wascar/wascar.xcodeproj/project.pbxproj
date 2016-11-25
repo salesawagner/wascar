@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3AC54325133C4303BE084631 /* Pods_wascarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B938479661803B8E1102EAAF /* Pods_wascarTests.framework */; };
-		A7005BA41DE6DD0100E7D464 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7005BA31DE6DD0100E7D464 /* Map.swift */; };
 		A72C65031DE50964008636A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72C64EE1DE50964008636A9 /* Assets.xcassets */; };
 		A72C65071DE50964008636A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64F81DE50964008636A9 /* AppDelegate.swift */; };
 		A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C64FA1DE50964008636A9 /* WCARTableViewController.swift */; };
@@ -27,6 +26,7 @@
 		A76A36771DE55643003764CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76A36751DE55643003764CE /* Localizable.strings */; };
 		A76CF44E1DE7A85200414253 /* Double+WCarDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76CF44D1DE7A85200414253 /* Double+WCarDouble.swift */; };
 		A777BD511DE8265E00910D52 /* NoPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777BD501DE8265E00910D52 /* NoPlacesViewController.swift */; };
+		A777BD531DE8370200910D52 /* UINavigationViewController+WCarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777BD521DE8370200910D52 /* UINavigationViewController+WCarNavigation.swift */; };
 		A790749C1DE66308000CD75C /* OpenNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790749B1DE66308000CD75C /* OpenNow.swift */; };
 		A790749F1DE66994000CD75C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790749E1DE66994000CD75C /* URL.swift */; };
 		A79074A21DE66B8D000CD75C /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A11DE66B8D000CD75C /* PlaceManager.swift */; };
@@ -51,7 +51,6 @@
 /* Begin PBXFileReference section */
 		0BA3DA69A817F33BBF3C47AF /* Pods-wascar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.release.xcconfig"; sourceTree = "<group>"; };
 		4A8EA7C9BBD80116C1AEDA07 /* Pods-wascarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A7005BA31DE6DD0100E7D464 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Helpers/Map.swift; sourceTree = "<group>"; };
 		A72C64EE1DE50964008636A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A72C64F51DE50964008636A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72C64F81DE50964008636A9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		A76A36761DE55643003764CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A76CF44D1DE7A85200414253 /* Double+WCarDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+WCarDouble.swift"; sourceTree = "<group>"; };
 		A777BD501DE8265E00910D52 /* NoPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPlacesViewController.swift; sourceTree = "<group>"; };
+		A777BD521DE8370200910D52 /* UINavigationViewController+WCarNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationViewController+WCarNavigation.swift"; sourceTree = "<group>"; };
 		A790749B1DE66308000CD75C /* OpenNow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenNow.swift; path = Core/CustomObjects/OpenNow.swift; sourceTree = "<group>"; };
 		A790749E1DE66994000CD75C /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		A79074A11DE66B8D000CD75C /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
@@ -108,14 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A7005BA21DE6DCE800E7D464 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A7005BA31DE6DD0100E7D464 /* Map.swift */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
 		A72C64ED1DE50964008636A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				A72C64F81DE50964008636A9 /* AppDelegate.swift */,
-				A7005BA21DE6DCE800E7D464 /* Helpers */,
 				A790749D1DE66994000CD75C /* Network */,
 				A790749A1DE662D0000CD75C /* CustomObjects */,
 				A76A366B1DE5543D003764CE /* Language */,
@@ -181,6 +172,7 @@
 		A72C64FC1DE50964008636A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A777BD521DE8370200910D52 /* UINavigationViewController+WCarNavigation.swift */,
 				A76CF44D1DE7A85200414253 /* Double+WCarDouble.swift */,
 				A79074A71DE688FE000CD75C /* UIImageView+WCarImageView.swift */,
 				A76A36691DE553CF003764CE /* String+WCarString.swift */,
@@ -532,7 +524,6 @@
 				A72C650C1DE50964008636A9 /* PlaceListViewController.swift in Sources */,
 				A777BD511DE8265E00910D52 /* NoPlacesViewController.swift in Sources */,
 				A790749F1DE66994000CD75C /* URL.swift in Sources */,
-				A7005BA41DE6DD0100E7D464 /* Map.swift in Sources */,
 				A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */,
 				A72C650B1DE50964008636A9 /* PlaceCell.swift in Sources */,
 				A76CF44E1DE7A85200414253 /* Double+WCarDouble.swift in Sources */,
@@ -540,6 +531,7 @@
 				A72C65071DE50964008636A9 /* AppDelegate.swift in Sources */,
 				A76A365E1DE52DDB003764CE /* UIColor+WCarColor.swift in Sources */,
 				A7F2047C1DE50C0600B10D09 /* PlaceDetailViewController.swift in Sources */,
+				A777BD531DE8370200910D52 /* UINavigationViewController+WCarNavigation.swift in Sources */,
 				A76A36611DE538A7003764CE /* PlaceCellViewModel.swift in Sources */,
 				A76A366D1DE5544E003764CE /* Localized.swift in Sources */,
 				A76A36641DE538FF003764CE /* Place.swift in Sources */,

@@ -65,7 +65,6 @@ class URL {
 	}
 	
 	class func places(type: String, location: CLLocation) -> String {
-		
 		let coordinate = location.coordinate
 		let latitude = coordinate.latitude
 		let longitude = coordinate.longitude

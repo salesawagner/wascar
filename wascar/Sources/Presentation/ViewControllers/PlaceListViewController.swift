@@ -128,16 +128,16 @@ class PlaceListViewController: WCARTableViewController {
 			}
 		} else if segue.identifier == kNoPlacesSegue {
 			self.openedViewController = segue.destinationViewController
-			if let navigationController = segue.destinationViewController as? UINavigationController {
-				if let viewController = navigationController.rootViewController as? NoPlacesViewController{
+			if let navigation = segue.destinationViewController as? UINavigationController {
+				if let viewController = navigation.WCARrootViewController as? NoPlacesViewController{
 					viewController.delegate = self
 					viewController.title = self.viewModel.title
 				}
 			}
 		} else if segue.identifier == kNoGpsSegue {
 			self.openedViewController = segue.destinationViewController
-			if let navigationController = segue.destinationViewController as? UINavigationController {
-				if let viewController = navigationController.rootViewController{
+			if let navigation = segue.destinationViewController as? UINavigationController {
+				if let viewController = navigation.WCARrootViewController{
 					viewController.title = self.viewModel.title
 				}
 			}
@@ -201,11 +201,5 @@ extension PlaceListViewController: NoPlacesViewControllerDelegate {
 		self.dismissIfNeed { 
 			self.loadPlaces()
 		}
-	}
-}
-
-extension UINavigationController {
-	var rootViewController: UIViewController? {
-		return self.viewControllers.first
 	}
 }
