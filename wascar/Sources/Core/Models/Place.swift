@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SwiftLocation
 import CoreLocation
 
 //**************************************************************************************************
@@ -41,11 +42,8 @@ class Place: NSObject {
 	var rating: Float
 	
 	// Location
-	var latitude: Double
-	var longitude: Double
-	var location: CLLocation {
-		return CLLocation(latitude: latitude, longitude: longitude)
-	}
+	var location: CLLocation
+	var distance: Double = 0
 	
 	// Open hours
 	var openNow: Bool
@@ -84,8 +82,13 @@ class Place: NSObject {
 		// Location
 		let geometry = json["geometry"]
 		let location = geometry["location"]
-		self.latitude = location["lat"].doubleValue
-		self.longitude = location["lng"].doubleValue
+		let latitude = location["lat"].doubleValue
+		let longitude = location["lng"].doubleValue
+		self.location = CLLocation(latitude: latitude, longitude: longitude)
+		
+		if let userLocation = Location.lastLocation {
+			self.distance = userLocation.distanceFromLocation(self.location)
+		}
 		
 		// Opening hours
 		let openingHours = json["opening_hours"]

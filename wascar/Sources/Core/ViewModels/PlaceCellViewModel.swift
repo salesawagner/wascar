@@ -44,12 +44,7 @@ class PlaceCellViewModel: NSObject {
 	init(place: Place) {
 		self.photoUrl	= place.photoUrl
 		self.name		= place.name
-		
-		if let userLocation = Location.lastLocation {
-			let placeLocation = place.location
-			let distance = userLocation.distanceFromLocation(placeLocation)
-			self.distance = distance.WCARmetersToString()
-		}
+		self.distance	= place.distance.WCARmetersToString()
 	}
 	
 	//**************************************************

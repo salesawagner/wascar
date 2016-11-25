@@ -56,7 +56,10 @@ class PlaceListViewModel: NSObject {
 	
 	private func setupPlaces(places: [Place]?) {
 		if let places = places {
-			for place in places {
+			let placesSorted = places.sort({
+				$0.distance < $1.distance
+			})
+			for place in placesSorted {
 				self.addPlace(place)
 			}
 		}
