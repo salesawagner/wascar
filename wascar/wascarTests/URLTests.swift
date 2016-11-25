@@ -9,6 +9,7 @@
 import XCTest
 @testable import wascar
 import CoreLocation
+import SwiftyJSON
 
 class URLTests: XCTestCase {
 	
@@ -30,9 +31,8 @@ class URLTests: XCTestCase {
     }
 	
 	func testListPlacesUrl() {
-		let type = "car_repair"
 		let location = CLLocation(latitude: 37.332331, longitude: -122.031219)
-		let urlString = URL.places(type, location: location)
+		let urlString = URL.places(location: location)
 		
 		let url = NSURL(string: urlString)!
 		let expectation = expectationWithDescription("GET \(url)")
@@ -50,6 +50,25 @@ class URLTests: XCTestCase {
 				XCTAssertEqual(MIMEType, "application/json", "HTTP response content type should be application/json")
 			} else {
 				XCTFail("Response was not NSHTTPURLResponse")
+			}
+			
+			do {
+				let jsonSerialized = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
+				if let json = jsonSerialized as? [String : AnyObject] {
+					if let status = json["status"] as? String {
+						XCTAssertEqual(status, "OK", "Response data status should be OK")
+					} else {
+						XCTFail("JSON response was not right format")
+					}
+					if !(json["results"] is [[String : AnyObject]]) {
+						XCTFail("Response data result was not valid array")
+					}
+				} else {
+					XCTFail("Response data was not right structure")
+				}
+				
+			} catch {
+				XCTFail("Data can be not serialized")
 			}
 			
 			expectation.fulfill()
@@ -85,6 +104,25 @@ class URLTests: XCTestCase {
 				XCTAssertEqual(MIMEType, "application/json", "HTTP response content type should be application/json")
 			} else {
 				XCTFail("Response was not NSHTTPURLResponse")
+			}
+			
+			do {
+				let jsonSerialized = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions())
+				if let json = jsonSerialized as? [String : AnyObject] {
+					if let status = json["status"] as? String {
+						XCTAssertEqual(status, "OK", "Response data status should be OK")
+					} else {
+						XCTFail("JSON response was not right format")
+					}
+					if !(json["result"] is [String : AnyObject]) {
+						XCTFail("Response data result was not valid object")
+					}
+				} else {
+					XCTFail("Response data was not right structure")
+				}
+				
+			} catch {
+				XCTFail("Data can be not serialized")
 			}
 			
 			expectation.fulfill()

@@ -14,6 +14,10 @@ import CoreLocation
 //
 //**************************************************************************************************
 
+private let kPlaceType		= "car_repair"
+private let kPlaceRadius	= 5000
+private let kPhotoMaxWidth	= 400
+
 //**************************************************************************************************
 //
 // MARK: - Definitions -
@@ -60,30 +64,36 @@ class URL {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	class func baseUrl(type: String) -> String {
-		return "\(self.placeApiUrl)/\(type)/json"
+	class func baseUrl(locationType: String) -> String {
+		return "\(self.placeApiUrl)/\(locationType)/json"
 	}
 	
-	class func places(type: String, location: CLLocation) -> String {
+	class func places(placeType: String = kPlaceType, location: CLLocation) -> String {
 		let coordinate = location.coordinate
 		let latitude = coordinate.latitude
 		let longitude = coordinate.longitude
 
 		var url = "\(self.baseUrl("nearbysearch"))"
 		url += "?location=\(String(format: "%f,%f", latitude, longitude))"
-		url += "&radius=50000"
-		url += "&type=\(type)"
+		url += "&radius=\(kPlaceRadius)"
+		url += "&type=\(placeType)"
 		url += "&key=\(self.apiKey)"
-		
 		return url
 	}
 	
 	class func placeById(id: String) -> String {
-		return "\(self.baseUrl("details"))?placeid=\(id)&key=\(self.apiKey)"
+		var url = self.baseUrl("details")
+		url += "?placeid=\(id)"
+		url += "&key=\(self.apiKey)"
+		return url
 	}
 	
-	class func photo(reference: String, maxWidth: Int = 400) -> String {
-		return "\(photoBaseUrl)?maxwidth=\(maxWidth)&photoreference=\(reference)&key=\(self.apiKey)"
+	class func photo(reference: String, maxWidth: Int = kPhotoMaxWidth) -> String {
+		var url = self.photoBaseUrl
+		url += "?maxwidth=\(maxWidth)"
+		url += "&photoreference=\(reference)"
+		url += "&key=\(self.apiKey)"
+		return url
 	}
 	
 	//**************************************************

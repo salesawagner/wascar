@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3AC54325133C4303BE084631 /* Pods_wascarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B938479661803B8E1102EAAF /* Pods_wascarTests.framework */; };
-		A7005BA41DE6DD0100E7D464 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7005BA31DE6DD0100E7D464 /* Map.swift */; };
 		A710E6081DE76AF20049C61D /* placeDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = A710E6061DE76AF20049C61D /* placeDetail.json */; };
 		A710E6091DE76AF20049C61D /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = A710E6071DE76AF20049C61D /* places.json */; };
 		A710E61A1DE76FDF0049C61D /* PlaceListViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710E6191DE76FDF0049C61D /* PlaceListViewModelMock.swift */; };
 		A710E61D1DE7731B0049C61D /* PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710E61C1DE7731B0049C61D /* PlaceTests.swift */; };
 		A710E61F1DE779640049C61D /* PlaceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710E61E1DE779640049C61D /* PlaceListViewModelTests.swift */; };
-		A710E6211DE77EF60049C61D /* placesInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = A710E6201DE77EF60049C61D /* placesInvalid.json */; };
 		A710E6231DE7805A0049C61D /* PlaceCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710E6221DE7805A0049C61D /* PlaceCellViewModelTests.swift */; };
 		A710E6251DE783D30049C61D /* PlaceDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710E6241DE783D30049C61D /* PlaceDetailViewModelTests.swift */; };
 		A710E6271DE786B50049C61D /* PlaceDetailViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710E6261DE786B50049C61D /* PlaceDetailViewModelMock.swift */; };
@@ -68,7 +66,6 @@
 		A710E6191DE76FDF0049C61D /* PlaceListViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceListViewModelMock.swift; path = Mocks/PlaceListViewModelMock.swift; sourceTree = "<group>"; };
 		A710E61C1DE7731B0049C61D /* PlaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTests.swift; sourceTree = "<group>"; };
 		A710E61E1DE779640049C61D /* PlaceListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewModelTests.swift; sourceTree = "<group>"; };
-		A710E6201DE77EF60049C61D /* placesInvalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = placesInvalid.json; path = Resources/jsons/placesInvalid.json; sourceTree = "<group>"; };
 		A710E6221DE7805A0049C61D /* PlaceCellViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModelTests.swift; sourceTree = "<group>"; };
 		A710E6241DE783D30049C61D /* PlaceDetailViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewModelTests.swift; sourceTree = "<group>"; };
 		A710E6261DE786B50049C61D /* PlaceDetailViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailViewModelMock.swift; path = Mocks/PlaceDetailViewModelMock.swift; sourceTree = "<group>"; };
@@ -152,7 +149,6 @@
 			children = (
 				A710E6061DE76AF20049C61D /* placeDetail.json */,
 				A710E6071DE76AF20049C61D /* places.json */,
-				A710E6201DE77EF60049C61D /* placesInvalid.json */,
 			);
 			name = jsons;
 			sourceTree = "<group>";
@@ -486,7 +482,6 @@
 			files = (
 				A710E6081DE76AF20049C61D /* placeDetail.json in Resources */,
 				A710E6091DE76AF20049C61D /* places.json in Resources */,
-				A710E6211DE77EF60049C61D /* placesInvalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
