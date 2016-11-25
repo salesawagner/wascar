@@ -26,6 +26,7 @@
 		A76A36731DE555CD003764CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76A36711DE555CD003764CE /* Main.storyboard */; };
 		A76A36771DE55643003764CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76A36751DE55643003764CE /* Localizable.strings */; };
 		A76CF44E1DE7A85200414253 /* Double+WCarDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76CF44D1DE7A85200414253 /* Double+WCarDouble.swift */; };
+		A777BD511DE8265E00910D52 /* NoPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777BD501DE8265E00910D52 /* NoPlacesViewController.swift */; };
 		A790749C1DE66308000CD75C /* OpenNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790749B1DE66308000CD75C /* OpenNow.swift */; };
 		A790749F1DE66994000CD75C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790749E1DE66994000CD75C /* URL.swift */; };
 		A79074A21DE66B8D000CD75C /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A11DE66B8D000CD75C /* PlaceManager.swift */; };
@@ -69,6 +70,7 @@
 		A76A36711DE555CD003764CE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A76A36761DE55643003764CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A76CF44D1DE7A85200414253 /* Double+WCarDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+WCarDouble.swift"; sourceTree = "<group>"; };
+		A777BD501DE8265E00910D52 /* NoPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPlacesViewController.swift; sourceTree = "<group>"; };
 		A790749B1DE66308000CD75C /* OpenNow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenNow.swift; path = Core/CustomObjects/OpenNow.swift; sourceTree = "<group>"; };
 		A790749E1DE66994000CD75C /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		A79074A11DE66B8D000CD75C /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				A72C65021DE50964008636A9 /* PlaceListViewController.swift */,
 				A7F2047B1DE50C0600B10D09 /* PlaceDetailViewController.swift */,
+				A777BD501DE8265E00910D52 /* NoPlacesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				A72C65091DE50964008636A9 /* WCARViewController.swift in Sources */,
 				A76A366A1DE553CF003764CE /* String+WCarString.swift in Sources */,
 				A72C650C1DE50964008636A9 /* PlaceListViewController.swift in Sources */,
+				A777BD511DE8265E00910D52 /* NoPlacesViewController.swift in Sources */,
 				A790749F1DE66994000CD75C /* URL.swift in Sources */,
 				A7005BA41DE6DD0100E7D464 /* Map.swift in Sources */,
 				A72C65081DE50964008636A9 /* WCARTableViewController.swift in Sources */,

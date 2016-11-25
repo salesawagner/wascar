@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftLocation
 
 //**************************************************************************************************
 //
@@ -14,7 +15,9 @@ import UIKit
 //
 //**************************************************************************************************
 
-private let kDetailSegue = "DetailSegue"
+private let kDetailSegue	= "DetailSegue"
+private let kNoGpsSegue		= "NoGpsSegue"
+private let kNoPlacesSegue	= "NoPlacesSegue"
 
 //**************************************************************************************************
 //
@@ -36,6 +39,7 @@ class PlaceListViewController: WCARTableViewController {
 	
 	var viewModel: PlaceListViewModel = PlaceListViewModel()
 	var refreshControl: UIRefreshControl!
+	var openedViewController: UIViewController?
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -56,12 +60,34 @@ class PlaceListViewController: WCARTableViewController {
 			self.startLoading()
 		}
 		self.viewModel.loadPlaces { (success) in
-			self.tableView.reloadData()
-			self.stopLoading(error: !success)
-			if let completion = completion {
-				completion(success: success)
+			// Stop loading
+			self.stopLoading()
+			
+			// Dismiss view controller if need
+			self.dismissIfNeed()
+			
+			// No location test
+			if !success && Location.lastLocation == nil{
+				self.performSegueWithIdentifier(kNoGpsSegue, sender: nil)
+				return
 			}
+			
+			// No places test
+			if self.viewModel.placeCellViewModels.count == 0 {
+				self.performSegueWithIdentifier(kNoPlacesSegue, sender: nil)
+			} else {
+				self.tableView.reloadData()
+			}
+			
+			completion?(success: success)
 		}
+	}
+	
+	private func dismissIfNeed(completion: (() -> Void)? = nil) {
+		self.openedViewController?.dismissViewControllerAnimated(true, completion: { 
+			self.openedViewController = nil
+			completion?()
+		})
 	}
 	
 	//**************************************************
@@ -100,6 +126,21 @@ class PlaceListViewController: WCARTableViewController {
 					viewController.viewModel = viewModel
 				}
 			}
+		} else if segue.identifier == kNoPlacesSegue {
+			self.openedViewController = segue.destinationViewController
+			if let navigationController = segue.destinationViewController as? UINavigationController {
+				if let viewController = navigationController.rootViewController as? NoPlacesViewController{
+					viewController.delegate = self
+					viewController.title = self.viewModel.title
+				}
+			}
+		} else if segue.identifier == kNoGpsSegue {
+			self.openedViewController = segue.destinationViewController
+			if let navigationController = segue.destinationViewController as? UINavigationController {
+				if let viewController = navigationController.rootViewController{
+					viewController.title = self.viewModel.title
+				}
+			}
 		}
 	}
 }
@@ -117,7 +158,6 @@ extension PlaceListViewController: UITableViewDataSource {
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
 		var cell: UITableViewCell!
 		if let myCell = tableView.dequeueReusableCellWithIdentifier(kPlaceCellIdentifier) as? PlaceCell {
 			let placeCellViewModels = self.viewModel.placeCellViewModels
@@ -147,5 +187,25 @@ extension PlaceListViewController: UITableViewDelegate {
 		let detailViewModels = self.viewModel.placeDetailViewModels
 		let detailViewModel = detailViewModels[indexPath.row]
 		self.performSegueWithIdentifier(kDetailSegue, sender: detailViewModel)
+	}
+}
+
+//**********************************************************************************************************
+//
+// MARK: - Extension - UITableViewDelegate
+//
+//**********************************************************************************************************
+
+extension PlaceListViewController: NoPlacesViewControllerDelegate {
+	func loadButtonTapped() {
+		self.dismissIfNeed { 
+			self.loadPlaces()
+		}
+	}
+}
+
+extension UINavigationController {
+	var rootViewController: UIViewController? {
+		return self.viewControllers.first
 	}
 }
