@@ -1,0 +1,25 @@
+//NAVBAR
+"REPAIR_LIST"="Lista de Oficinas";
+"DETAILS"="Detalhes";
+
+//DETAILS VIEW
+"ADDRESS"="Endereço";
+"OPEN"="Aberto";
+"RATING"="Classificação";
+
+//OPEN NOW VIEW
+"OPEN_NOW"="Aberto Agora";
+"CLOSED"="Fechado";
+
+//WEEKDAYS
+"MONDAY"="Segunda";
+"TUESDAY"="Terça";
+"WEDNESDAY"="Quarta";
+"THURSDAY"="Quinta";
+"FRIDAY"="Sexta";
+"SATURDAY"="Sábado";
+"SUNDAY"="Domingo";
+
+//LOADING
+"WAIT"="Espere";
+"LOADING"="Eu estou carregando...";

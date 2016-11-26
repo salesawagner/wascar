@@ -66,7 +66,7 @@ class PlaceDetailViewModel: NSObject {
 		var openingHours = ""
 		for hour in place.period {
 			openingHours += openingHours.isEmpty ? "" : "\n"
-			openingHours += hour
+			openingHours += hour.WCARopeningHours()
 		}
 		self.openingHours	= openingHours
 		self.address		= place.address

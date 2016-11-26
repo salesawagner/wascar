@@ -12,7 +12,7 @@ extension Double {
 	func WCARmetersToString() -> String {
 		var kms = ""
 		if self < 1000 {
-			kms = "less than 1 km"
+			kms = "< 1 km"
 		} else {
 			let distance = self/1000
 			kms = String(format: "%.2f km", distance)

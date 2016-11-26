@@ -36,8 +36,6 @@ class WCARViewController: UIViewController {
 	// SCLAlertView
 	var loading: SCLAlertView?
 	var loadingResponse: SCLAlertViewResponder?
-	var alert: SCLAlertView?
-	var alertResponse: SCLAlertViewResponder?
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -99,8 +97,7 @@ class WCARViewController: UIViewController {
 	// MARK: Loading
 	//*************************
 	
-	internal func startLoading(title: String = "Wait", subtitle : String = "I'm loading...", cancelTitle : String? = nil) {
-		
+	internal func startLoading(title: String = L.wait, subtitle : String = L.loading, cancelTitle : String? = nil) {
 		if self.loading == nil {
 			
 			let app = SCLAlertView.SCLAppearance(showCloseButton: false)
@@ -120,14 +117,7 @@ class WCARViewController: UIViewController {
 		}
 	}
 	
-	internal func stopLoading(error hasErro: Bool = false) {
-		
-		if hasErro {
-			self.loadingResponse?.setDismissBlock({
-				self.showError()
-			})
-		}
-		
+	internal func stopLoading() {
 		if self.loading != nil {
 			self.loadingResponse?.close()
 			self.loading = nil
@@ -136,33 +126,6 @@ class WCARViewController: UIViewController {
 	
 	internal func loadingDidClose() {
 		self.loadingResponse = nil
-	}
-	
-	//*************************
-	// MARK: Loading
-	//*************************
-	
-	internal func showError(title: String = "Sorry", subtitle: String = "Something went wrong.", cancelTitle: String = "OK") {
-		self.showAlert(title, subtitle: subtitle, cancelTitle: cancelTitle, style: .Error)
-	}
-	
-	internal func showAlert(title: String, subtitle: String, cancelTitle: String, style: SCLAlertViewStyle) {
-		
-		if self.alert == nil {
-			
-			let alert = SCLAlertView()
-			self.alert = alert
-			self.alertResponse = alert.showTitle(title, subTitle: subtitle, style: style, closeButtonTitle: cancelTitle, duration: 0, colorStyle: UIColor.WCARRedColor().WCARColorToUInt())
-			
-			self.alertResponse?.setDismissBlock({
-				self.alertDidClose()
-			})
-		}
-	}
-	
-	internal func alertDidClose() {
-		self.alert = nil
-		self.alertResponse = nil
 	}
 	
 	//**************************************************
@@ -178,7 +141,6 @@ class WCARViewController: UIViewController {
 		self.setupNavigation()
 		self.setupUI()
     }
-
 }
 
 //**********************************************************************************************************

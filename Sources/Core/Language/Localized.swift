@@ -40,4 +40,41 @@ struct L {
 	static var closed: String {
 		return "CLOSED".WCARlocalized
 	}
+	
+	//WEEKDAYS
+	static var monday: String {
+		return "MONDAY".WCARlocalized
+	}
+	
+	static var tuesday: String {
+		return "TUESDAY".WCARlocalized
+	}
+	
+	static var wednesday: String {
+		return "WEDNESDAY".WCARlocalized
+	}
+	
+	static var thursday: String {
+		return "THURSDAY".WCARlocalized
+	}
+	
+	static var friday: String {
+		return "FRIDAY".WCARlocalized
+	}
+	
+	static var saturday: String {
+		return "SATURDAY".WCARlocalized
+	}
+	
+	static var sunday: String {
+		return "SUNDAY".WCARlocalized
+	}
+	
+	//LOADING
+	static var wait: String {
+		return "WAIT".WCARlocalized
+	}
+	static var loading: String {
+		return "LOADING".WCARlocalized
+	}
 }

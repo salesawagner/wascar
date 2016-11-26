@@ -99,6 +99,7 @@
 		A76CF44D1DE7A85200414253 /* Double+WCarDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+WCarDouble.swift"; sourceTree = "<group>"; };
 		A777BD501DE8265E00910D52 /* NoPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPlacesViewController.swift; sourceTree = "<group>"; };
 		A777BD521DE8370200910D52 /* UINavigationViewController+WCarNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationViewController+WCarNavigation.swift"; sourceTree = "<group>"; };
+		A77C97C51DEA15A600AD89E3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A790749B1DE66308000CD75C /* OpenNow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenNow.swift; path = Core/CustomObjects/OpenNow.swift; sourceTree = "<group>"; };
 		A790749E1DE66994000CD75C /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		A79074A11DE66B8D000CD75C /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
@@ -479,6 +480,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"pt-BR",
 			);
 			mainGroup = A7BF29BF1DE5091200916EDC;
 			productRefGroup = A7BF29C91DE5091200916EDC /* Products */;
@@ -671,6 +673,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A76A36761DE55643003764CE /* en */,
+				A77C97C51DEA15A600AD89E3 /* pt-BR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
