@@ -43,7 +43,13 @@ class Place: NSObject {
 	
 	// Location
 	var location: CLLocation
-	var distance: Double = 0
+	var distance: Double {
+		var distance: Double = 0
+		if let userLocation = Location.lastLocation {
+			distance = userLocation.distanceFromLocation(self.location)
+		}
+		return distance
+	}
 	
 	// Open hours
 	var openNow: Bool
@@ -67,10 +73,15 @@ class Place: NSObject {
 	// MARK: - Constructors
 	//**************************************************
 	
-	init(json: JSON) {
+	init?(json: JSON) {
+		guard let id = json["place_id"].string where !id.isEmpty,
+			let name = json["name"].string where !name.isEmpty else {
+			return nil
+		}
+		
 		// Info
-		self.id = json["place_id"].stringValue
-		self.name = json["name"].stringValue
+		self.id = id
+		self.name = name
 		self.rating = json["rating"].floatValue
 
 		// Address
@@ -82,10 +93,6 @@ class Place: NSObject {
 		let latitude = location["lat"].doubleValue
 		let longitude = location["lng"].doubleValue
 		self.location = CLLocation(latitude: latitude, longitude: longitude)
-		
-		if let userLocation = Location.lastLocation {
-			self.distance = userLocation.distanceFromLocation(self.location)
-		}
 		
 		// Opening hours
 		let openingHours = json["opening_hours"]
@@ -116,7 +123,9 @@ class Place: NSObject {
 	class func arrayFromJson(json: JSON) -> [Place] {
 		var places = [Place]()
 		for placeJson in json.arrayValue {
-			places.append(Place(json: placeJson))
+			if let place = Place(json: placeJson) {
+				places.append(place)
+			}
 		}
 		return places
 	}

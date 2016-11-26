@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftLocation
+import CoreLocation
 
 //**************************************************************************************************
 //
@@ -58,6 +59,17 @@ class PlaceListViewModel: NSObject {
 	// MARK: - Internal Methods
 	//**************************************************
 	
+	internal func requestPlacesWithLocation(location: CLLocation, completion: CompletionSuccess) {
+		PlaceManager.requestList(location, completion: { (success, places) in
+			if success {
+				self.setupPlaces(places)
+				completion(success: true)
+			} else {
+				completion(success: false)
+			}
+		})
+	}
+	
 	internal func setupPlaces(places: [Place]?) {
 		if let places = places {
 			let placesSorted = places.sort({
@@ -75,14 +87,7 @@ class PlaceListViewModel: NSObject {
 	
 	func loadPlaces(completion: CompletionSuccess) {
 		Location.getLocation(withAccuracy: .Block, frequency: .OneShot, timeout: 5, onSuccess: { (location) in
-			PlaceManager.requestList(location, completion: { (success, places) in
-				if success {
-					self.setupPlaces(places)
-					completion(success: true)
-				} else {
-					completion(success: false)
-				}
-			})
+			self.requestPlacesWithLocation(location, completion: completion)
 		}) { (lastValidLocation, error) in
 			completion(success: false)
 		}

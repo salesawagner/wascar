@@ -38,6 +38,10 @@
                BlueprintName = "wascarTests"
                ReferencedContainer = "container:wascar.xcodeproj">
             </BuildableReference>
+            <LocationScenarioReference
+               identifier = "../Resources/Supporting Files/Cupertino.gpx"
+               referenceType = "0">
+            </LocationScenarioReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>

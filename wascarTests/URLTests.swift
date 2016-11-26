@@ -11,24 +11,7 @@ import XCTest
 import CoreLocation
 import SwiftyJSON
 
-class URLTests: XCTestCase {
-	
-	var place: Place {
-		let json = PlaceTests.placeDetailJSON
-		return Place(json: json["result"])
-	}
-	
-	var photo: Photo {
-		return self.place.photos.first!
-	}
-	
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
+class URLTests: WCARTest {
 	
 	func testListPlacesUrl() {
 		let location = CLLocation(latitude: 37.332331, longitude: -122.031219)

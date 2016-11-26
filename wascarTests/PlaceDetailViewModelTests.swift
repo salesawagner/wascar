@@ -9,30 +9,33 @@
 import XCTest
 @testable import wascar
 
-class PlaceDetailViewModelTests: XCTestCase {
-        
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
+class PlaceDetailViewModelTests: WCARTest {
 	
 	func testInitialization() {
-		let place = Place(json: PlaceTests.placeDetailJSON)
-		let placeCellViewModel = PlaceDetailViewModel(place: place)
+		let placeCellViewModel = PlaceDetailViewModel(place: self.place)
 		XCTAssertNotNil(placeCellViewModel, "The place detail view model should not be nil.")
 	}
 	
-	func testUpdatePlaces() {
+	func testUpdatePlace() {
 		let expectation = self.expectationWithDescription(#function)
-		let place = Place(json: PlaceTests.placeDetailJSON)
-		let placeDetailViewModel = PlaceDetailViewModelMock(place: place)
+		let placeDetailViewModel = PlaceDetailViewModel(place: self.place)
 		
 		placeDetailViewModel.loadPlaceById { (success) in
 			expectation.fulfill()
-			XCTAssertNotNil(placeDetailViewModel.openingHours, "The openingHours should not be nil.")
+			XCTAssert(success, "The success should be true.")
+		}
+		
+		self.waitForExpectationsWithTimeout(60, handler: nil)
+	}
+	
+	func testUpdatePlaceFail() {
+		let expectation = self.expectationWithDescription(#function)
+		let placeDetailViewModel = PlaceDetailViewModel(place: self.place)
+		placeDetailViewModel.placeId = ""
+		
+		placeDetailViewModel.loadPlaceById { (success) in
+			expectation.fulfill()
+			XCTAssert(success == false, "The success should be false.")
 		}
 		
 		self.waitForExpectationsWithTimeout(60, handler: nil)

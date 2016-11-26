@@ -9,19 +9,10 @@
 import XCTest
 @testable import wascar
 
-class PlaceCellViewModelTests: XCTestCase {
-        
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
+class PlaceCellViewModelTests: WCARTest {
+	
 	func testInitialization() {
-		let place = Place(json: PlaceTests.placeDetailJSON)
-		let placeCellViewModel = PlaceCellViewModel(place: place)
+		let placeCellViewModel = PlaceCellViewModel(place: self.place)
 		XCTAssertNotNil(placeCellViewModel, "The place cell view model should not be nil.")
 	}
 	

@@ -57,11 +57,7 @@ extension UIColor {
 		return UIColor(r: 208, g: 2, b: 27, a: 1)
 	}
 	
-	class func WCAROpenNowGreenColor() -> UIColor {
+	class func WCARGreenColor() -> UIColor {
 		return UIColor(r: 104, g: 165, b: 38, a: 1)
-	}
-	
-	class func WCAROpenNowRedColor() -> UIColor {
-		return UIColor.WCARRedColor()
 	}
 }

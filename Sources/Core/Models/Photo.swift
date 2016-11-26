@@ -40,9 +40,12 @@ class Photo: NSObject {
 	// MARK: - Constructors
 	//**************************************************
 	
-	init(json: JSON) {
+	init?(json: JSON) {
+		guard let reference = json["photo_reference"].string where !reference.isEmpty else {
+			return nil
+		}
+		self.reference = reference
 		let width = json["width"].intValue
-		self.reference = json["photo_reference"].stringValue
 		self.url = URL.photo(reference, maxWidth: min(width, 400))
 	}
 	
@@ -60,8 +63,10 @@ class Photo: NSObject {
 	
 	class func arrayFromJson(json: JSON) -> [Photo] {
 		var photos = [Photo]()
-		for photo in json.arrayValue {
-			photos.append(Photo(json: photo))
+		for photoJson in json.arrayValue {
+			if let photo = Photo(json: photoJson) {
+				photos.append(photo)
+			}
 		}
 		return photos
 	}

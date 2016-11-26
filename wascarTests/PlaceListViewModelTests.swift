@@ -9,16 +9,8 @@
 import XCTest
 @testable import wascar
 
-class PlaceListViewModelTests: XCTestCase {
+class PlaceListViewModelTests: WCARTest {
         
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-	
 	func testInitialization() {
 		let placeListViewModel = PlaceListViewModel()
 		let placeCellViewModels = placeListViewModel.placeCellViewModels
@@ -34,13 +26,29 @@ class PlaceListViewModelTests: XCTestCase {
 		
 		placeListViewModel.loadPlaces { (success) in
 			expectation.fulfill()
-			let placeCellViewModels = placeListViewModel.placeCellViewModels
-			let placeDetailViewModels = placeListViewModel.placeDetailViewModels
-			let expectedPlacesCount = 10
-			XCTAssertTrue(placeCellViewModels.count == expectedPlacesCount, "The place cell view models count should be equal to \(expectedPlacesCount).")
-			XCTAssertTrue(placeDetailViewModels.count == expectedPlacesCount, "The place detail view models count should be equal to \(expectedPlacesCount).")
+			let placeCellViewModels		= placeListViewModel.placeCellViewModels
+			let placeDetailViewModels	= placeListViewModel.placeDetailViewModels
+			XCTAssertGreaterThan(placeCellViewModels.count, 0, "The place cell view models count should be greater than 0")
+			XCTAssertGreaterThan(placeDetailViewModels.count, 0, "The place detail view models count should be greater than 0")
+			XCTAssertTrue(placeCellViewModels.count == placeDetailViewModels.count, "The place cell and detail view models count should be equal.")
+		}
+		
+		self.waitForExpectationsWithTimeout(60, handler: nil)
+	}
+	
+	func testLoadPlacesFail() {
+		let expectation = self.expectationWithDescription(#function)
+		let placeListViewModel = PlaceListViewModelMock()
+		
+		placeListViewModel.loadPlacesInvalid { (success) in
+			expectation.fulfill()
+			let placeCellViewModels		= placeListViewModel.placeCellViewModels
+			let placeDetailViewModels	= placeListViewModel.placeDetailViewModels
+			XCTAssertTrue(placeCellViewModels.count == 0, "The place cell view models count should be equal 0.")
+			XCTAssertTrue(placeDetailViewModels.count == 0, "The place detail view models count should be equal 0.")
 		}
 		
 		self.waitForExpectationsWithTimeout(60, handler: nil)
 	}
 }
+

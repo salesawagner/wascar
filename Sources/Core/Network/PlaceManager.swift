@@ -58,33 +58,27 @@ class PlaceManager: NSObject {
 	class func requestList(location: CLLocation, completion: (success: Bool, places: [Place]?) -> Void ) -> Request? {
 		let url = URL.places(location: location)
 		return Alamofire.request(.GET, url, encoding: .JSON).responseJSON { response in
-			if let value = response.result.value {
-				let json = JSON(value)
-				if self.validateResponse(json) {
-					let places = Place.arrayFromJson(json["results"])
-					completion(success: true, places: places)
-				} else {
-					completion(success: false, places: nil)
-				}
-			} else {
+			
+			guard let value = response.result.value where self.validateResponse(JSON(value)) else {
 				completion(success: false, places: nil)
+				return
 			}
+			
+			let places = Place.arrayFromJson(JSON(value)["results"])
+			completion(success: true, places: places)
 		}
 	}
 	
 	class func requestById(id: String, completion: (success: Bool, place: Place?) -> Void ) -> Request? {
 		let url = URL.placeById(id)
 		return Alamofire.request(.GET, url, encoding: .JSON).responseJSON { response in
-			if let value = response.result.value {
-				let json = JSON(value)
-				if self.validateResponse(json) {
-					completion(success: true, place: Place(json: json["result"]))
-				} else {
-					completion(success: false, place: nil)
-				}
-			} else {
+			
+			guard let value = response.result.value where self.validateResponse(JSON(value)),
+				let place = Place(json: JSON(value)["result"]) else {
 				completion(success: false, place: nil)
+				return
 			}
+			completion(success: true, place: place)
 		}
 	}
 	

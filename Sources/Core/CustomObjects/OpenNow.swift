@@ -42,9 +42,9 @@ enum ViewType {
 		var color: UIColor
 		switch self {
 		case .Open:
-			color = UIColor.WCAROpenNowGreenColor()
+			color = UIColor.WCARGreenColor()
 		case .Close:
-			color = UIColor.WCAROpenNowRedColor()
+			color = UIColor.WCARRedColor()
 		default:
 			color = UIColor.clearColor()
 		}
