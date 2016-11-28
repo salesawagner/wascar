@@ -10,13 +10,13 @@ import UIKit
 
 extension String {
 	var WCARlocalized: String {
-		return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+		return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
 	}
-	func WCARreplace(target: String, withString: String) -> String {
-		return self.stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
+	func WCARreplace(_ target: String, withString: String) -> String {
+		return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
 	}
 	func WCARopeningHours() -> String {
-		var weekdays = self.lowercaseString
+		var weekdays = self.lowercased()
 		weekdays = weekdays.WCARreplace("monday", withString: L.monday)
 		weekdays = weekdays.WCARreplace("tuesday", withString: L.tuesday)
 		weekdays = weekdays.WCARreplace("wednesday", withString: L.wednesday)
@@ -25,6 +25,6 @@ extension String {
 		weekdays = weekdays.WCARreplace("saturday", withString: L.saturday)
 		weekdays = weekdays.WCARreplace("sunday", withString: L.sunday)
 		weekdays = weekdays.WCARreplace("closed", withString: L.closed)
-		return weekdays.capitalizedString
+		return weekdays.capitalized
 	}
 }

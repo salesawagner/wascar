@@ -64,11 +64,11 @@ class URL {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	class func baseUrl(locationType: String) -> String {
+	class func baseUrl(_ locationType: String) -> String {
 		return "\(self.placeApiUrl)/\(locationType)/json"
 	}
 	
-	class func places(placeType: String = kPlaceType, location: CLLocation) -> String {
+	class func places(_ placeType: String = kPlaceType, location: CLLocation) -> String {
 		let coordinate = location.coordinate
 		let latitude = coordinate.latitude
 		let longitude = coordinate.longitude
@@ -81,14 +81,14 @@ class URL {
 		return url
 	}
 	
-	class func placeById(id: String) -> String {
+	class func placeById(_ id: String) -> String {
 		var url = self.baseUrl("details")
 		url += "?placeid=\(id)"
 		url += "&key=\(self.apiKey)"
 		return url
 	}
 	
-	class func photo(reference: String, maxWidth: Int = kPhotoMaxWidth) -> String {
+	class func photo(_ reference: String, maxWidth: Int = kPhotoMaxWidth) -> String {
 		var url = self.photoBaseUrl
 		url += "?maxwidth=\(maxWidth)"
 		url += "&photoreference=\(reference)"

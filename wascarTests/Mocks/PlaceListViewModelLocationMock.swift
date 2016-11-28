@@ -10,14 +10,14 @@ import UIKit
 @testable import wascar
 import CoreLocation
 
-class PlaceListViewModelMock: PlaceListViewModel {
+class PlaceListViewModelLocationMock: PlaceListViewModel {
 	
-	override func loadPlaces(completion: CompletionSuccess) {
+	override func loadPlaces(_ completion: @escaping CompletionSuccess) {
 		let location = CLLocation(latitude: 37.332331, longitude: -122.031219)
 		self.requestPlacesWithLocation(location, completion: completion)
 	}
 	
-	func loadPlacesInvalid(completion: CompletionSuccess) {
+	func loadPlacesInvalid(_ completion: @escaping CompletionSuccess) {
 		let location = CLLocation()
 		self.requestPlacesWithLocation(location, completion: completion)
 	}

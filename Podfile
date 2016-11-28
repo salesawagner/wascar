@@ -1,20 +1,20 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'wascar' do
   use_frameworks!
 
 	# UI
-	pod 'SCLAlertView',		'0.6'
+	pod 'SCLAlertView'
 
 	# Server
-	pod 'Alamofire',		'~> 3.5'
+	pod 'Alamofire'
 	pod 'AlamofireImage'
 	
 	# JSON parse
-	pod 'SwiftyJSON',		'~> 2.4'
+	pod 'SwiftyJSON'
 	
 	# Location
-	pod 'SwiftLocation',	'1.0.5'
+	pod 'SwiftLocation'
 	
   target 'wascarTests' do
     inherit! :search_paths

@@ -17,7 +17,7 @@ class PlaceDetailViewModelTests: WCARTest {
 	}
 	
 	func testUpdatePlace() {
-		let expectation = self.expectationWithDescription(#function)
+		let expectation = self.expectation(description: #function)
 		let placeDetailViewModel = PlaceDetailViewModel(place: self.place)
 		
 		placeDetailViewModel.loadPlaceById { (success) in
@@ -25,11 +25,11 @@ class PlaceDetailViewModelTests: WCARTest {
 			XCTAssert(success, "The success should be true.")
 		}
 		
-		self.waitForExpectationsWithTimeout(60, handler: nil)
+		self.waitForExpectations(timeout: 60, handler: nil)
 	}
 	
 	func testUpdatePlaceFail() {
-		let expectation = self.expectationWithDescription(#function)
+		let expectation = self.expectation(description: #function)
 		let placeDetailViewModel = PlaceDetailViewModel(place: self.place)
 		placeDetailViewModel.placeId = ""
 		
@@ -38,6 +38,6 @@ class PlaceDetailViewModelTests: WCARTest {
 			XCTAssert(success == false, "The success should be false.")
 		}
 		
-		self.waitForExpectationsWithTimeout(60, handler: nil)
+		self.waitForExpectations(timeout: 60, handler: nil)
 	}
 }

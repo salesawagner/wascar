@@ -43,7 +43,7 @@ class PlaceManager: NSObject {
 	// MARK: - Private Methods
 	//**************************************************
 	
-	class func validateResponse(result: JSON) -> Bool {
+	class func validateResponse(_ result: JSON) -> Bool {
 		return result["status"].string == "OK"
 	}
 	
@@ -55,30 +55,27 @@ class PlaceManager: NSObject {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	class func requestList(location: CLLocation, completion: (success: Bool, places: [Place]?) -> Void ) -> Request? {
+	class func requestList(_ location: CLLocation, completion: @escaping CompletionSuccessPlaces ) -> Request? {
 		let url = URL.places(location: location)
-		return Alamofire.request(.GET, url, encoding: .JSON).responseJSON { response in
-			
-			guard let value = response.result.value where self.validateResponse(JSON(value)) else {
-				completion(success: false, places: nil)
+		return Alamofire.request(url, method: .get).responseJSON { response in
+			guard let value = response.result.value, self.validateResponse(JSON(value)) else {
+				completion(false, nil)
 				return
 			}
-			
 			let places = Place.arrayFromJson(JSON(value)["results"])
-			completion(success: true, places: places)
+			completion(true, places)
 		}
 	}
 	
-	class func requestById(id: String, completion: (success: Bool, place: Place?) -> Void ) -> Request? {
+	class func requestById(_ id: String, completion: @escaping CompletionSuccessPlace ) -> Request? {
 		let url = URL.placeById(id)
-		return Alamofire.request(.GET, url, encoding: .JSON).responseJSON { response in
-			
-			guard let value = response.result.value where self.validateResponse(JSON(value)),
+		return Alamofire.request(url, method: .get).responseJSON { response in
+			guard let value = response.result.value, self.validateResponse(JSON(value)),
 				let place = Place(json: JSON(value)["result"]) else {
-				completion(success: false, place: nil)
-				return
+					completion(false, nil)
+					return
 			}
-			completion(success: true, place: place)
+			completion(true, place)
 		}
 	}
 	

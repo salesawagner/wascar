@@ -46,7 +46,7 @@ class PlaceListViewModel: NSObject {
 	// MARK: - Private Methods
 	//**************************************************
 	
-	private func addPlace(place: Place) {
+	private func addPlace(_ place: Place) {
 		let cellViewModel	= PlaceCellViewModel(place: place)
 		let detailViewModel	= PlaceDetailViewModel(place: place)
 		self.placeCellViewModels.append(cellViewModel)
@@ -57,20 +57,20 @@ class PlaceListViewModel: NSObject {
 	// MARK: - Internal Methods
 	//**************************************************
 	
-	internal func requestPlacesWithLocation(location: CLLocation, completion: CompletionSuccess) {
-		PlaceManager.requestList(location, completion: { (success, places) in
+	internal func requestPlacesWithLocation(_ location: CLLocation, completion: @escaping CompletionSuccess) {
+		let _ = PlaceManager.requestList(location, completion: { (success, places) in
 			if success {
 				self.setupPlaces(places)
-				completion(success: true)
+				completion(true)
 			} else {
-				completion(success: false)
+				completion(false)
 			}
 		})
 	}
 	
-	internal func setupPlaces(places: [Place]?) {
+	internal func setupPlaces(_ places: [Place]?) {
 		if let places = places {
-			let placesSorted = places.sort({
+			let placesSorted = places.sorted(by: {
 				$0.distance < $1.distance
 			})
 			for place in placesSorted {
@@ -83,11 +83,11 @@ class PlaceListViewModel: NSObject {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	func loadPlaces(completion: CompletionSuccess) {
-		Location.getLocation(withAccuracy: .Block, frequency: .OneShot, timeout: 5, onSuccess: { (location) in
+	func loadPlaces(_ completion: @escaping CompletionSuccess) {
+		let _ = Location.getLocation(withAccuracy: .block, frequency: .oneShot, timeout: 5, onSuccess: { (location) in
 			self.requestPlacesWithLocation(location, completion: completion)
 		}) { (lastValidLocation, error) in
-			completion(success: false)
+			completion(false)
 		}
 	}
 	

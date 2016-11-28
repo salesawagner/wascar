@@ -62,7 +62,7 @@ class PlaceDetailViewModel: NSObject {
 	// MARK: - Internal Methods
 	//**************************************************
 	
-	internal func updatePlace(place: Place) {
+	internal func updatePlace(_ place: Place) {
 		var openingHours = ""
 		for hour in place.period {
 			openingHours += openingHours.isEmpty ? "" : "\n"
@@ -76,12 +76,12 @@ class PlaceDetailViewModel: NSObject {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	func loadPlaceById(completion: CompletionSuccess) {
-		PlaceManager.requestById(self.placeId) { (success, place) in
+	func loadPlaceById(_ completion: @escaping CompletionSuccess) {
+		let _ = PlaceManager.requestById(self.placeId) { (success, place) in
 			if success && place != nil {
 				self.updatePlace(place!)
 			}
-			completion(success: success)
+			completion(success)
 		}
 	}
 	

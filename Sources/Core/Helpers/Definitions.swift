@@ -7,4 +7,7 @@
 //
 
 // Handler
-typealias CompletionSuccess = ((success: Bool) -> Void)
+typealias Completion = () -> Void
+typealias CompletionSuccess = (_ success: Bool) -> Void
+typealias CompletionSuccessPlaces = (_ success: Bool, _ places: [Place]?) -> Void
+typealias CompletionSuccessPlace = (_ success: Bool, _ place: Place?) -> Void

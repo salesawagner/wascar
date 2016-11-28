@@ -21,8 +21,8 @@ class PlaceListViewModelTests: WCARTest {
 	}
 	
 	func testLoadPlaces() {
-		let expectation = self.expectationWithDescription(#function)
-		let placeListViewModel = PlaceListViewModelMock()
+		let expectation = self.expectation(description: #function)
+		let placeListViewModel = PlaceListViewModelLocationMock()
 		
 		placeListViewModel.loadPlaces { (success) in
 			expectation.fulfill()
@@ -33,12 +33,12 @@ class PlaceListViewModelTests: WCARTest {
 			XCTAssertTrue(placeCellViewModels.count == placeDetailViewModels.count, "The place cell and detail view models count should be equal.")
 		}
 		
-		self.waitForExpectationsWithTimeout(60, handler: nil)
+		self.waitForExpectations(timeout: 60, handler: nil)
 	}
 	
 	func testLoadPlacesFail() {
-		let expectation = self.expectationWithDescription(#function)
-		let placeListViewModel = PlaceListViewModelMock()
+		let expectation = self.expectation(description: #function)
+		let placeListViewModel = PlaceListViewModelLocationMock()
 		
 		placeListViewModel.loadPlacesInvalid { (success) in
 			expectation.fulfill()
@@ -48,7 +48,7 @@ class PlaceListViewModelTests: WCARTest {
 			XCTAssertTrue(placeDetailViewModels.count == 0, "The place detail view models count should be equal 0.")
 		}
 		
-		self.waitForExpectationsWithTimeout(60, handler: nil)
+		self.waitForExpectations(timeout: 60, handler: nil)
 	}
 }
 

@@ -46,7 +46,7 @@ class Place: NSObject {
 	var distance: Double {
 		var distance: Double = 0
 		if let userLocation = Location.lastLocation {
-			distance = userLocation.distanceFromLocation(self.location)
+			distance = userLocation.distance(from: self.location)
 		}
 		return distance
 	}
@@ -74,8 +74,8 @@ class Place: NSObject {
 	//**************************************************
 	
 	init?(json: JSON) {
-		guard let id = json["place_id"].string where !id.isEmpty,
-			let name = json["name"].string where !name.isEmpty else {
+		guard let id = json["place_id"].string, !id.isEmpty,
+			let name = json["name"].string, !name.isEmpty else {
 			return nil
 		}
 		
@@ -120,7 +120,7 @@ class Place: NSObject {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	class func arrayFromJson(json: JSON) -> [Place] {
+	class func arrayFromJson(_ json: JSON) -> [Place] {
 		var places = [Place]()
 		for placeJson in json.arrayValue {
 			if let place = Place(json: placeJson) {

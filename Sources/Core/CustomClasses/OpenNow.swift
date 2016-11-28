@@ -21,16 +21,16 @@ import UIKit
 //**************************************************************************************************
 
 enum ViewType {
-	case None
-	case Open
-	case Close
+	case none
+	case open
+	case close
 	
 	func text() -> String {
 		var text: String
 		switch self {
-			case .Open:
+			case .open:
 				text = L.openNow
-			case .Close:
+			case .close:
 				text = L.closed
 			default:
 				text = ""
@@ -41,12 +41,12 @@ enum ViewType {
 	func color() -> UIColor {
 		var color: UIColor
 		switch self {
-		case .Open:
-			color = UIColor.WCARGreenColor()
-		case .Close:
-			color = UIColor.WCARRedColor()
-		default:
-			color = UIColor.clearColor()
+			case .open:
+				color = UIColor.WCARGreenColor()
+			case .close:
+				color = UIColor.WCARRedColor()
+			default:
+				color = UIColor.clear
 		}
 		return color
 	}
@@ -71,18 +71,18 @@ enum ViewType {
 		}
 	}
 	
-	private var label: UILabel = UILabel()
+	var label: UILabel = UILabel()
 
 	//**************************************************
 	// MARK: - Constructors
 	//**************************************************
 	
-	override init (frame : CGRect) {
+	override init(frame : CGRect) {
 		super.init(frame : frame)
 		self.setup()
 	}
 	
-	convenience init () {
+	convenience init() {
 		self.init(frame:CGRect.zero)
 		self.setup()
 	}
@@ -98,12 +98,12 @@ enum ViewType {
 	
 	private func setup() {
 		self.cornerRadius = 4
-		self.setStatus(.None)
+		self.setStatus(.none)
 		
-		let label = UILabel(frame: CGRectMake(0, 0, self.frame.width, self.frame.height))
+		let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
 		label.font = UIFont.WCARFontWithSize(10)
-		label.textColor = UIColor.whiteColor()
-		label.textAlignment = .Center
+		label.textColor = UIColor.white
+		label.textAlignment = .center
 		self.label = label
 		self.addSubview(self.label)
 	}
@@ -116,7 +116,7 @@ enum ViewType {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	func setStatus(status: ViewType) {
+	func setStatus(_ status: ViewType) {
 		self.backgroundColor = status.color()
 		self.label.text = status.text()
 	}

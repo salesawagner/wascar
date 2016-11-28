@@ -13,20 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Attributes
 		let titleAtributes = [
-			NSForegroundColorAttributeName: UIColor.whiteColor(),
+			NSForegroundColorAttributeName: UIColor.white,
 			NSFontAttributeName: UIFont.WCARnavigationBarFont()
 		]
 		// Navigation bar appearance
 		let navAppearance = UINavigationBar.appearance()
 		navAppearance.barTintColor = UIColor.WCARBlueColor()
 		navAppearance.titleTextAttributes = titleAtributes
-		navAppearance.translucent = false
+		navAppearance.isTranslucent = false
 		// Navigation bar button appearance
 		let barButtonAppearance = UIBarButtonItem.appearance()
-		barButtonAppearance.setTitleTextAttributes(titleAtributes, forState: .Normal)
+		barButtonAppearance.setTitleTextAttributes(titleAtributes, for: UIControlState())
 		return true
 	}
 }

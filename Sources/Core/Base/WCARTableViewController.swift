@@ -52,7 +52,7 @@ class WCARTableViewController: WCARViewController {
 		self.tableView.tableFooterView					= UIView()
 		self.tableView.showsVerticalScrollIndicator		= false
 		self.tableView.showsHorizontalScrollIndicator	= false
-		self.tableView.backgroundColor					= UIColor.clearColor()
+		self.tableView.backgroundColor					= UIColor.clear
 	}
 	
 	//**************************************************

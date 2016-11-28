@@ -33,6 +33,7 @@ class PlaceDetailViewController: WCARViewController {
 	//**************************************************
 	
 	var viewModel: PlaceDetailViewModel!
+	var firstTime: Bool = true
 	
 	// Photo
 	@IBOutlet weak var photoImageView: UIImageView!
@@ -70,15 +71,19 @@ class PlaceDetailViewController: WCARViewController {
 		self.openValueLabel.text	= self.viewModel.openingHours
 		// Open view
 		if self.viewModel.openNow {
-			self.openNowView.setStatus(.Open)
+			self.openNowView.setStatus(.open)
 		} else {
-			self.openNowView.setStatus(.Close)
+			self.openNowView.setStatus(.close)
 		}
 		// Photo
 		self.photoImageView.WCARsetImageWithUrl(self.viewModel.photoUrl)
 		// Animation
-		UIView.animateWithDuration(0.25) {
-			self.view.layoutIfNeeded()
+		if !self.firstTime {
+			UIView.animate(withDuration: 0.25, animations: {
+				self.view.layoutIfNeeded()
+			})
+		} else {
+			self.firstTime = false
 		}
 	}
 	
@@ -115,8 +120,8 @@ class PlaceDetailViewController: WCARViewController {
 	
 	override func setupUI() {
 		super.setupUI()
-		self.view.backgroundColor	= UIColor.whiteColor()
-		self.title = self.viewModel.title
+		self.view.backgroundColor	= UIColor.white
+		self.title					= self.viewModel.title
 		self.addressLabel.text		= L.address
 		self.openLabel.text			= L.open
 		self.ratingLabel.text		= L.rating

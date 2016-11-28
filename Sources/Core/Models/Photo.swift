@@ -41,7 +41,7 @@ class Photo: NSObject {
 	//**************************************************
 	
 	init?(json: JSON) {
-		guard let reference = json["photo_reference"].string where !reference.isEmpty else {
+		guard let reference = json["photo_reference"].string, !reference.isEmpty else {
 			return nil
 		}
 		self.reference = reference
@@ -61,7 +61,7 @@ class Photo: NSObject {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	class func arrayFromJson(json: JSON) -> [Photo] {
+	class func arrayFromJson(_ json: JSON) -> [Photo] {
 		var photos = [Photo]()
 		for photoJson in json.arrayValue {
 			if let photo = Photo(json: photoJson) {

@@ -40,6 +40,7 @@ class PlaceListViewController: WCARTableViewController {
 	var viewModel: PlaceListViewModel = PlaceListViewModel()
 	var refreshControl: UIRefreshControl!
 	var openedViewController: UIViewController?
+	var firstTime: Bool = true
 	
 	//**************************************************
 	// MARK: - Constructors
@@ -51,41 +52,12 @@ class PlaceListViewController: WCARTableViewController {
 	
 	private func setupPullRefresh() {
 		self.refreshControl = UIRefreshControl()
-		self.refreshControl.addTarget(self, action: #selector(self.didRefresh(_:)), forControlEvents: .ValueChanged)
+		self.refreshControl.addTarget(self, action: #selector(self.didRefresh(_:)), for: .valueChanged)
 		self.tableView.addSubview(self.refreshControl)
 	}
 	
-	private func loadPlaces(loading: Bool = true, completion: CompletionSuccess? = nil) {
-		if loading {
-			self.startLoading()
-		}
-		self.viewModel.loadPlaces { (success) in
-			// Stop loading
-			self.stopLoading(hasError: !success)
-
-			// Dismiss view controller if need
-			self.dismissIfNeed()
-			
-			// No location check
-			if !success && Location.lastLocation == nil{
-				self.performSegueWithIdentifier(kNoGpsSegue, sender: nil)
-				return
-			}
-			
-			// No places check
-			if self.viewModel.placeCellViewModels.count == 0 {
-				self.performSegueWithIdentifier(kNoPlacesSegue, sender: nil)
-				return
-			} else {
-				self.tableView.reloadData()
-			}
-			
-			completion?(success: success)
-		}
-	}
-	
-	private func dismissIfNeed(completion: (() -> Void)? = nil) {
-		self.openedViewController?.dismissViewControllerAnimated(true, completion: { 
+	fileprivate func dismissIfNeed(_ completion: Completion? = nil) {
+		self.openedViewController?.dismiss(animated: true, completion: {
 			self.openedViewController = nil
 			completion?()
 		})
@@ -95,7 +67,32 @@ class PlaceListViewController: WCARTableViewController {
 	// MARK: - Internal Methods
 	//**************************************************
 	
-	internal func didRefresh(refreshControl: UIRefreshControl) {
+	internal func loadPlaces(_ loading: Bool = true, completion: CompletionSuccess? = nil) {
+		if loading {
+			self.startLoading()
+		}
+		self.viewModel.loadPlaces { (success) in
+			// Dismiss view controller if need
+			self.dismissIfNeed()
+			// No location check
+			if !success && Location.lastLocation == nil{
+				self.stopLoading(hasError: false)
+				self.performSegue(withIdentifier: kNoGpsSegue, sender: nil)
+				return
+			}
+			// No places check
+			if self.viewModel.placeCellViewModels.count == 0 {
+				self.stopLoading(hasError: false)
+				self.performSegue(withIdentifier: kNoPlacesSegue, sender: nil)
+				return
+			}
+			self.tableView.reloadData()
+			self.stopLoading(hasError: !success)
+			completion?(success)
+		}
+	}
+	
+	internal func didRefresh(_ refreshControl: UIRefreshControl) {
 		self.loadPlaces(false) { (success) in
 			self.refreshControl.endRefreshing()
 		}
@@ -112,31 +109,39 @@ class PlaceListViewController: WCARTableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.setupPullRefresh()
-		self.loadPlaces()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if self.firstTime {
+			self.loadPlaces()
+			self.firstTime = false
+		}
 	}
 	
 	override func setupUI() {
+		super.setupUI()
 		self.title = self.viewModel.title
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == kDetailSegue {
-			if let viewController = segue.destinationViewController as? PlaceDetailViewController {
+			if let viewController = segue.destination as? PlaceDetailViewController {
 				if let viewModel = sender as? PlaceDetailViewModel {
 					viewController.viewModel = viewModel
 				}
 			}
 		} else if segue.identifier == kNoPlacesSegue {
-			self.openedViewController = segue.destinationViewController
-			if let navigation = segue.destinationViewController as? UINavigationController {
+			self.openedViewController = segue.destination
+			if let navigation = segue.destination as? UINavigationController {
 				if let viewController = navigation.WCARrootViewController as? NoPlacesViewController{
 					viewController.delegate = self
 					viewController.title = self.viewModel.title
 				}
 			}
 		} else if segue.identifier == kNoGpsSegue {
-			self.openedViewController = segue.destinationViewController
-			if let navigation = segue.destinationViewController as? UINavigationController {
+			self.openedViewController = segue.destination
+			if let navigation = segue.destination as? UINavigationController {
 				if let viewController = navigation.WCARrootViewController{
 					viewController.title = self.viewModel.title
 				}
@@ -153,19 +158,19 @@ class PlaceListViewController: WCARTableViewController {
 
 extension PlaceListViewController: UITableViewDataSource {
 
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.viewModel.placeCellViewModels.count
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		var cell: UITableViewCell!
-		if let myCell = tableView.dequeueReusableCellWithIdentifier(kPlaceCellIdentifier) as? PlaceCell {
+		if let myCell = tableView.dequeueReusableCell(withIdentifier: kPlaceCellIdentifier) as? PlaceCell {
 			let placeCellViewModels = self.viewModel.placeCellViewModels
 			let cellViewModel = placeCellViewModels[indexPath.row]
 			myCell.setup(cellViewModel)
 			cell = myCell
 		} else {
-			cell = UITableViewCell(style: .Default, reuseIdentifier: kPlaceCellIdentifier)
+			cell = UITableViewCell(style: .default, reuseIdentifier: kPlaceCellIdentifier)
 		}
 		return cell
 	}
@@ -179,14 +184,14 @@ extension PlaceListViewController: UITableViewDataSource {
 
 extension PlaceListViewController: UITableViewDelegate {
 	
-	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 130
 	}
 	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let detailViewModels = self.viewModel.placeDetailViewModels
 		let detailViewModel = detailViewModels[indexPath.row]
-		self.performSegueWithIdentifier(kDetailSegue, sender: detailViewModel)
+		self.performSegue(withIdentifier: kDetailSegue, sender: detailViewModel)
 	}
 }
 

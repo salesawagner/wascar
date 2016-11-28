@@ -54,7 +54,7 @@ class NoPlacesViewController: WCARViewController {
 	// MARK: - Public Methods
 	//**************************************************
 	
-	@IBAction func loadButtonTapped(sender: AnyObject) {
+	@IBAction func loadButtonTapped(_ sender: AnyObject) {
 		self.delegate.loadButtonTapped()
 	}
 	

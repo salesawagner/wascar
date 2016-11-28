@@ -12,8 +12,10 @@ import SCLAlertView
 private var kLoadingAssociationKey: UInt8 = 0
 
 extension UIViewController {
-	func pop(animated: Bool = true) {
-		self.navigationController?.popViewControllerAnimated(animated)
+	func pop(_ animated: Bool = true) {
+		if let nav = self.navigationController {
+			nav.popViewController(animated: animated)
+		}
 	}
 	var loading: SCLAlertViewResponder? {
 		get {
@@ -24,7 +26,7 @@ extension UIViewController {
 			objc_setAssociatedObject(self, &kLoadingAssociationKey, newValue, policy)
 		}
 	}
-	func startLoading(title: String = L.wait, subtitle : String = L.loading) {
+	func startLoading(_ title: String = L.wait, subtitle : String = L.loading) {
 		if self.loading == nil {
 			let app = SCLAlertView.SCLAppearance(showCloseButton: false)
 			let loading = SCLAlertView(appearance: app)
@@ -45,7 +47,7 @@ extension UIViewController {
 		}
 	}
 	func showError() {
-		let style: SCLAlertViewStyle = .Error
+		let style: SCLAlertViewStyle = .error
 		let colorStyle = UIColor.WCARRedColor().WCARColorToUInt()
 		let title		= L.sorry
 		let subtitle	= L.somethingWentWrong
@@ -54,5 +56,8 @@ extension UIViewController {
 		                         style: style,
 		                         duration: 0,
 		                         colorStyle: colorStyle)
+	}
+	func preloadView() {
+		let _ = view
 	}
 }
