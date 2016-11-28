@@ -1,0 +1,5 @@
+coverage_service: cobertura_xml
+xcodeproj: ./wascar.xcodeproj
+workspace: ./wascar.xcworkspace
+scheme: wascar
+output_directory: ./wascarTestsReports
