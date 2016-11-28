@@ -25,6 +25,21 @@ Requirements
 | 3.0 | iOS 10.0 | Xcode 8+ |
 | 2.2 | iOS 9.3 | Xcode 7.3 |
 
+CI
+=====================
+- **<a href="http://travis-ci.org"> Travis </a>**
+
+
+Pods
+=====================
+- **<a href="https://github.com/vikmeup/SCLAlertView-Swift"> SCLAlertView </a>**
+- **<a href="https://github.com/Alamofire/Alamofire"> Alamofire </a>**
+- **<a href="https://github.com/Alamofire/AlamofireImage"> AlamofireImage </a>**
+- **<a href="https://github.com/SwiftyJSON/SwiftyJSON"> SwiftyJSON </a>**
+- **<a href="https://github.com/malcommac/SwiftLocation"> SwiftLocation </a>**
+
+
+
 Author
 ==================
 **Wagner Sales**
