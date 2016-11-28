@@ -48,7 +48,7 @@ class PlaceDetailViewModel: NSObject {
 	init(place: Place) {
 		self.placeId	= place.id
 		self.name		= place.name
-		self.address	= ""
+		self.address	= place.address
 		self.openNow	= place.openNow
 		self.rating		= String(format: "%.1f", place.rating)
 		self.photoUrl	= place.photoUrl

@@ -61,20 +61,21 @@ class PlaceListViewController: WCARTableViewController {
 		}
 		self.viewModel.loadPlaces { (success) in
 			// Stop loading
-			self.stopLoading()
-			
+			self.stopLoading(hasError: !success)
+
 			// Dismiss view controller if need
 			self.dismissIfNeed()
 			
-			// No location test
+			// No location check
 			if !success && Location.lastLocation == nil{
 				self.performSegueWithIdentifier(kNoGpsSegue, sender: nil)
 				return
 			}
 			
-			// No places test
+			// No places check
 			if self.viewModel.placeCellViewModels.count == 0 {
 				self.performSegueWithIdentifier(kNoPlacesSegue, sender: nil)
+				return
 			} else {
 				self.tableView.reloadData()
 			}
@@ -114,8 +115,7 @@ class PlaceListViewController: WCARTableViewController {
 		self.loadPlaces()
 	}
 	
-	override func setupNavigation() {
-		super.setupNavigation()
+	override func setupUI() {
 		self.title = self.viewModel.title
 	}
 	

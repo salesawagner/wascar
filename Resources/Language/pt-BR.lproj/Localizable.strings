@@ -23,3 +23,7 @@
 //LOADING
 "WAIT"="Espere";
 "LOADING"="Eu estou carregando...";
+
+//ALERT
+"SORRY"="Desculpa";
+"SOMETHING_WRONG"="Aconteceu algo errado.";

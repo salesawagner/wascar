@@ -77,4 +77,12 @@ struct L {
 	static var loading: String {
 		return "LOADING".WCARlocalized
 	}
+	
+	//ALERT
+	static var sorry: String {
+		return "SORRY".WCARlocalized
+	}
+	static var somethingWentWrong: String {
+		return "SOMETHING_WRONG".WCARlocalized
+	}
 }

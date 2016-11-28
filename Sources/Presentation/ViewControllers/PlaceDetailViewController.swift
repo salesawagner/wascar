@@ -51,6 +51,9 @@ class PlaceDetailViewController: WCARViewController {
 	@IBOutlet weak var ratingLabel: UILabel!
 	@IBOutlet weak var ratingValueLabel: UILabel!
 	
+	// Loading
+	@IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
+	
 	//**************************************************
 	// MARK: - Constructors
 	//**************************************************
@@ -58,6 +61,38 @@ class PlaceDetailViewController: WCARViewController {
 	//**************************************************
 	// MARK: - Private Methods
 	//**************************************************
+	
+	private func setValues() {
+		// Values
+		self.nameValueLabel.text	= self.viewModel.name
+		self.addressValueLabel.text = self.viewModel.address
+		self.ratingValueLabel.text	= self.viewModel.rating
+		self.openValueLabel.text	= self.viewModel.openingHours
+		// Open view
+		if self.viewModel.openNow {
+			self.openNowView.setStatus(.Open)
+		} else {
+			self.openNowView.setStatus(.Close)
+		}
+		// Photo
+		self.photoImageView.WCARsetImageWithUrl(self.viewModel.photoUrl)
+		// Animation
+		UIView.animateWithDuration(0.25) {
+			self.view.layoutIfNeeded()
+		}
+	}
+	
+	private func loadPlaceById() {
+		self.loadingIndicatorView.startAnimating()
+		self.viewModel.loadPlaceById { (success) in
+			self.loadingIndicatorView.stopAnimating()
+			if success {
+				self.setValues()
+			} else {
+				self.showError()
+			}
+		}
+	}
 	
 	//**************************************************
 	// MARK: - Internal Methods
@@ -67,9 +102,6 @@ class PlaceDetailViewController: WCARViewController {
 	// MARK: - Public Methods
 	//**************************************************
 
-	@IBAction func mapButtonTapped(sender: AnyObject) {
-	}
-	
 	//**************************************************
 	// MARK: - Override Public Methods
 	//**************************************************
@@ -77,34 +109,16 @@ class PlaceDetailViewController: WCARViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.setupUI()
-		self.viewModel.loadPlaceById { (success) in
-			self.setupUI()
-		}
+		self.setValues()
+		self.loadPlaceById()
     }
-	
-	override func setupNavigation() {
-		super.setupNavigation()
-		self.title = self.viewModel.title
-	}
 	
 	override func setupUI() {
 		super.setupUI()
-		self.view.backgroundColor = UIColor.whiteColor()
-		self.addressLabel.text = L.address
-		self.openLabel.text = L.open
-		self.ratingLabel.text = L.rating
-		
-		// Values
-		self.nameValueLabel.text = self.viewModel.name
-		self.addressValueLabel.text = self.viewModel.address
-		self.ratingValueLabel.text = self.viewModel.rating
-		self.openValueLabel.text = self.viewModel.openingHours
-		if self.viewModel.openNow {
-			self.openNowView.setStatus(.Open)
-		} else {
-			self.openNowView.setStatus(.Close)
-		}
-		self.photoImageView.WCARsetImageWithUrl(self.viewModel.photoUrl)
+		self.view.backgroundColor	= UIColor.whiteColor()
+		self.title = self.viewModel.title
+		self.addressLabel.text		= L.address
+		self.openLabel.text			= L.open
+		self.ratingLabel.text		= L.rating
 	}
-
 }

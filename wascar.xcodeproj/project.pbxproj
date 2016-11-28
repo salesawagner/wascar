@@ -46,6 +46,8 @@
 		A79074A21DE66B8D000CD75C /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A11DE66B8D000CD75C /* PlaceManager.swift */; };
 		A79074A61DE68633000CD75C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A51DE68633000CD75C /* Photo.swift */; };
 		A79074A81DE688FE000CD75C /* UIImageView+WCarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79074A71DE688FE000CD75C /* UIImageView+WCarImageView.swift */; };
+		A7CD06E41DEBC24500F37E05 /* UIViewController+WCARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD06E31DEBC24500F37E05 /* UIViewController+WCARViewController.swift */; };
+		A7CD06E81DEBD21800F37E05 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD06E71DEBD21800F37E05 /* Definitions.swift */; };
 		A7E246381DE6475800E2902C /* PlaceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E246371DE6475800E2902C /* PlaceDetailViewModel.swift */; };
 		A7F2047C1DE50C0600B10D09 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F2047B1DE50C0600B10D09 /* PlaceDetailViewController.swift */; };
 		E977FAB3A4BDE5F7964B72AF /* Pods_wascar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C56570087B3C866546BAC8 /* Pods_wascar.framework */; };
@@ -64,7 +66,6 @@
 /* Begin PBXFileReference section */
 		0BA3DA69A817F33BBF3C47AF /* Pods-wascar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascar.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascar/Pods-wascar.release.xcconfig"; sourceTree = "<group>"; };
 		4A8EA7C9BBD80116C1AEDA07 /* Pods-wascarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A7005BA31DE6DD0100E7D464 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Helpers/Map.swift; sourceTree = "<group>"; };
 		A710E6061DE76AF20049C61D /* placeDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = placeDetail.json; path = Resources/jsons/placeDetail.json; sourceTree = "<group>"; };
 		A710E6071DE76AF20049C61D /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = places.json; path = Resources/jsons/places.json; sourceTree = "<group>"; };
 		A710E6191DE76FDF0049C61D /* PlaceListViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceListViewModelMock.swift; path = Mocks/PlaceListViewModelMock.swift; sourceTree = "<group>"; };
@@ -108,6 +109,8 @@
 		A7BF29C81DE5091200916EDC /* wascar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wascar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF29DC1DE5091200916EDC /* wascarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wascarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF29E21DE5091200916EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Resources/Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		A7CD06E31DEBC24500F37E05 /* UIViewController+WCARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+WCARViewController.swift"; sourceTree = "<group>"; };
+		A7CD06E71DEBD21800F37E05 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Definitions.swift; path = Helpers/Definitions.swift; sourceTree = "<group>"; };
 		A7E246371DE6475800E2902C /* PlaceDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailViewModel.swift; path = ViewModels/PlaceDetailViewModel.swift; sourceTree = "<group>"; };
 		A7F2047B1DE50C0600B10D09 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		A9CB8163C58350D942119F21 /* Pods-wascarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wascarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wascarTests/Pods-wascarTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,14 +139,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A7005BA21DE6DCE800E7D464 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A7005BA31DE6DD0100E7D464 /* Map.swift */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
 		A710E6041DE76AA80049C61D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				A72C64F81DE50964008636A9 /* AppDelegate.swift */,
-				A7005BA21DE6DCE800E7D464 /* Helpers */,
+				A7CD06E51DEBD1F400F37E05 /* Helpers */,
 				A790749D1DE66994000CD75C /* Network */,
 				A790749A1DE662D0000CD75C /* CustomObjects */,
 				A76A366B1DE5543D003764CE /* Language */,
@@ -252,6 +247,7 @@
 				A76A36691DE553CF003764CE /* String+WCarString.swift */,
 				A76A365D1DE52DDB003764CE /* UIColor+WCarColor.swift */,
 				A72C64FD1DE50964008636A9 /* UIFont+WCarFont.swift */,
+				A7CD06E31DEBC24500F37E05 /* UIViewController+WCARViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +384,14 @@
 				A74FBD891DE9732000ED8503 /* WCARTests.swift */,
 			);
 			path = wascarTests;
+			sourceTree = "<group>";
+		};
+		A7CD06E51DEBD1F400F37E05 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A7CD06E71DEBD21800F37E05 /* Definitions.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		CB3C7B2E058B842C7A498EEB /* Frameworks */ = {
@@ -622,6 +626,7 @@
 				A79074A81DE688FE000CD75C /* UIImageView+WCarImageView.swift in Sources */,
 				A790749C1DE66308000CD75C /* OpenNow.swift in Sources */,
 				A7E246381DE6475800E2902C /* PlaceDetailViewModel.swift in Sources */,
+				A7CD06E41DEBC24500F37E05 /* UIViewController+WCARViewController.swift in Sources */,
 				A79074A21DE66B8D000CD75C /* PlaceManager.swift in Sources */,
 				A72C65091DE50964008636A9 /* WCARViewController.swift in Sources */,
 				A76A366A1DE553CF003764CE /* String+WCarString.swift in Sources */,
@@ -632,6 +637,7 @@
 				A72C650B1DE50964008636A9 /* PlaceCell.swift in Sources */,
 				A76CF44E1DE7A85200414253 /* Double+WCarDouble.swift in Sources */,
 				A79074A61DE68633000CD75C /* Photo.swift in Sources */,
+				A7CD06E81DEBD21800F37E05 /* Definitions.swift in Sources */,
 				A72C65071DE50964008636A9 /* AppDelegate.swift in Sources */,
 				A76A365E1DE52DDB003764CE /* UIColor+WCarColor.swift in Sources */,
 				A7F2047C1DE50C0600B10D09 /* PlaceDetailViewController.swift in Sources */,
