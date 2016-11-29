@@ -3,3 +3,10 @@ osx_image: xcode7.3
 xcode_workspace: wascar.xcworkspace
 xcode_scheme: wascar
 xcode_sdk: iphonesimulator9.3
+
+# Slather
+before_install: rvm use $RVM_RUBY_VERSION
+install: bundle install --without=documentation --path ../travis_bundle_dir
+after_success: 
+  - slather
+  - bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml
