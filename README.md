@@ -28,6 +28,7 @@ Requirements
 CI
 =====================
 - **<a href="http://travis-ci.org"> Travis </a>**
+- **<a href="https://github.com/SlatherOrg/slather"> Slather </a>**
 
 
 Pods
