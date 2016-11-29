@@ -6,12 +6,12 @@
 [![Library](https://img.shields.io/badge/dependency_manager-cocoapods-lightgrey.svg?style=flat)](http://cocoapods.org)
 
 #####Swift 3.0:
-![branch](https://img.shields.io/badge/branch-master-yellow.svg?style=flat) 
-![salesawagner](https://travis-ci.org/salesawagner/wascar.svg?branch=master&style=flat)
+[![branch](https://img.shields.io/badge/branch-master-yellow.svg?style=flat)](https://github.com/salesawagner/wascar)
+[![Build Status](https://travis-ci.org/salesawagner/wascar.svg?branch=master&style=flat)](https://travis-ci.org/salesawagner/wascar)
 
 #####Swift 2.2 
-![branch](https://img.shields.io/badge/branch-swift--2-yellow.svg?style=flat) 
-![salesawagner](https://travis-ci.org/salesawagner/wascar.svg?branch=swift-2&style=flat)
+[![Build Tag](https://img.shields.io/badge/tag-swift--2.2-yellow.svg?style=flat)](https://github.com/salesawagner/wascar/releases/tag/swift-2.2)
+[![Build Status](https://travis-ci.org/salesawagner/wascar.svg?branch=swift-2.2&style=flat)](https://travis-ci.org/salesawagner/wascar)
 
 Language support
 =====================
