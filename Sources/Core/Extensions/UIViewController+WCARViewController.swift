@@ -12,11 +12,6 @@ import SCLAlertView
 private var kLoadingAssociationKey: UInt8 = 0
 
 extension UIViewController {
-	func pop(_ animated: Bool = true) {
-		if let nav = self.navigationController {
-			nav.popViewController(animated: animated)
-		}
-	}
 	var loading: SCLAlertViewResponder? {
 		get {
 			return objc_getAssociatedObject(self, &kLoadingAssociationKey) as? SCLAlertViewResponder
