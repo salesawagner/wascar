@@ -4,6 +4,7 @@
 ![Platform](https://img.shields.io/badge/platform-iOS-ffc713.svg?style=flat)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/salesawagner/wascar/blob/master/LICENSE)
 [![Library](https://img.shields.io/badge/dependency_manager-cocoapods-lightgrey.svg?style=flat)](http://cocoapods.org)
+[![codecov](https://codecov.io/gh/salesawagner/wascar/branch/master/graph/badge.svg)](https://codecov.io/gh/salesawagner/wascar)
 
 #####Swift 3.0:
 [![branch](https://img.shields.io/badge/branch-master-yellow.svg?style=flat)](https://github.com/salesawagner/wascar)

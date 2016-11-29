@@ -1,11 +1,20 @@
 language: objective-c
 osx_image: xcode8.1
-xcode_workspace: wascar.xcworkspace
+xcode_project: wascar.xcworkspace
 xcode_scheme: wascar
 xcode_sdk: iphonesimulator10.1
 
-before_install: rvm use $RVM_RUBY_VERSION
-install: bundle install --without=documentation --path ../travis_bundle_dir
+before_install:
+- rm -rf /Users/travis/Library/Developer/Xcode/DerivedData/wascar-*/
+- rvm use $RVM_RUBY_VERSION
+
+install:
+- bundle
+- bundle install --without=documentation --path ../travis_bundle_dir
+
+script:
+- xcodebuild -workspace wascar.xcworkspace -scheme wascar -destination "platform=iOS Simulator,name=iPhone 6s,OS=10.1" clean test | xcpretty
+
 after_success: 
   - slather
-  - bash <(curl -s https://codecov.io/bash) -f ./wascarTestsReports
+  - bash <(curl -s https://codecov.io/bash) -f ./wascarTestsReports/cobertura.xml

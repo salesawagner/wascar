@@ -1,5 +1,7 @@
+ci_service: travis_ci
 coverage_service: cobertura_xml
-xcodeproj: ./wascar.xcodeproj
 workspace: ./wascar.xcworkspace
+xcodeproj: ./wascar.xcodeproj
 scheme: wascar
-output_directory: ./wascarTestsReports
+source_directory: ./Sources/
+output_directory: ./wascarTestsReports/
