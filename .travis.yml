@@ -1,20 +1,31 @@
 language: objective-c
 osx_image: xcode8.1
-xcode_project: wascar.xcworkspace
-xcode_scheme: wascar
-xcode_sdk: iphonesimulator10.1
-
-before_install:
-- rm -rf /Users/travis/Library/Developer/Xcode/DerivedData/wascar-*/
-- rvm use $RVM_RUBY_VERSION
-
-install:
-- bundle
-- bundle install --without=documentation --path ../travis_bundle_dir
-
+env:
+  global:
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - WORKSPACE=wascar.xcworkspace
+  - IOS_FRAMEWORK_SCHEME="Alamofire iOS"
+  - IOS_SDK=iphonesimulator10.0
+  matrix:
+    - DESTINATION="OS=10.1,name=iPhone 7"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="NO"
+    - DESTINATION="OS=9.0,name=iPhone 6"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="NO"
+    - DESTINATION="OS=8.1,name=iPhone 4S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="NO"
 script:
-- xcodebuild -workspace wascar.xcworkspace -scheme wascar -destination "platform=iOS Simulator,name=iPhone 6s,OS=10.1" clean test | xcpretty
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
 
-after_success: 
-  - slather
-  - bash <(curl -s https://codecov.io/bash) -f ./wascarTestsReports/cobertura.xml
+  # Build Framework in Debug and Run Tests if specified
+  - if [ $RUN_TESTS == "YES" ]; then
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
+    else
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
+    fi
+
+  # Build Framework in Release and Run Tests if specified
+  - if [ $RUN_TESTS == "YES" ]; then
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
+    else
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty;
+    fi
